@@ -1,0 +1,5 @@
+
+<view  class='empty'>
+    <view><image src="../../img/empty.png"  class='empty_icon'></image></view>
+    <view>空空如也</view>
+</view>

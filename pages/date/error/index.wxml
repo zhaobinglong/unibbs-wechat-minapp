@@ -1,0 +1,12 @@
+
+
+ <!-- 列表视图下 如果一个活动都没有，展示icon -->
+ <view class='date_list_empty' >
+     <image src="../../../img/empty.png" class='icon_date_empty'></image>
+     <view class='date_list_none'>没有位置信息，请退出小程序重新授权</view>
+ </view>
+
+
+
+
+

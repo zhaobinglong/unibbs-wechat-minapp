@@ -1,0 +1,82 @@
+
+.page_create{
+   background-color: #FFF;
+   font-size:28rpx;
+   height:100vh;
+   padding-top: 60rpx
+}
+
+.page_create_item{
+   padding:12px;
+   background-color:#FFF;
+   line-height: 50rpx;
+}
+.page_create_item_remark{
+  font-size:22rpx;
+  padding:10rpx 24rpx;
+  color:#999;
+}
+.page_create_item_title{
+  color:#999;
+  padding-right:10rpx;
+}
+.page_create_item_choose_symbol{
+  color:#999;
+}
+.page_create_item_border{
+   box-shadow: inset 0 -1rpx 0 0 #e6e6e6;
+}
+.page_create_textarea{
+  height:140rpx;
+  width:96%;
+}
+.date_create_item_right{
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #888888;
+	letter-spacing: 0;
+	line-height: 100rpx
+}
+.create_date_name{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height: 100rpx;
+  width:100%;	
+}
+.create_params{
+  font-size:28rpx;
+  min-height: 0;
+}
+.ershou_edit_nation{
+  font-size:24rpx;
+  color:#8a8a8a;
+}
+
+.address_true{
+  filter: drop-shadow(60rpx  0 0 #65b997); 
+  margin-left:-60rpx;
+  z-index:99;
+}
+.page_create_button_box{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  flex-wrap: nowrap;
+  height:88rpx;
+  
+}
+.sq_more_img{
+  width: 120rpx!important;
+  height: 120rpx!important;
+}
+.btn-create{
+  position: fixed;
+  right: 20px;
+  top: 0;
+  width: 140rpx;
+  height: 60rpx;
+  color: #fff;
+}

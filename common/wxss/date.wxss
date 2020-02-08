@@ -1,0 +1,211 @@
+
+/*日程列表样式*/
+
+.date{
+  margin:24rpx 20rpx;
+  /*padding:30rpx 40rpx 0rpx 40rpx;*/
+  background-color:#FFF;
+  border-radius: 8rpx;
+  overflow:hidden;
+}
+/*取消的日程*/
+.date_state_cancel{  border-right:9rpx solid #D8D8D8;}
+/*我加入的日程*/
+.date_state_join{border-right:9rpx solid #48B8FE;}
+/*其他*/
+.date_state_other{opacity: 0.5;border-right:9rpx solid  #89D8B8;}
+/*好友发布的对我可见的*/
+.date_state_allow{border-right:9rpx solid  #FDC956;}
+/*系统*/
+.date_state_system{border-right:9rpx solid  #A182E5;}
+
+.date_title{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #0C3C64;
+  letter-spacing: 0;
+  line-height:70rpx;
+  background-color:#DBE5E9;
+  padding-left:40rpx;
+}
+.date_title_item{
+  display:inline-block;
+  margin-right:40rpx;
+}
+
+/*列表开始啦*/
+.date_list{
+  padding:32rpx 40rpx 0 40rpx;
+
+}
+.date_detail_name{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height: 100rpx;
+  width:90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;  
+}
+.date_detail_address{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height: 12px;
+}
+.date_detail_label{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height: 100rpx
+}
+.date_list_none{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #888888;
+  letter-spacing: 0;
+   padding-bottom:50rpx;
+}
+.date_list_empty{
+  text-align:center;
+  margin-top:90rpx;
+  margin-bottom:124rpx;
+}
+.date_list_label{
+  height:76rpx;
+  width:6rpx;
+  margin-left:38rpx;
+  margin-right:40rpx;
+}
+.date_list_item{
+  margin-bottom:40rpx;
+  position:relative;
+  overflow:hidden;  
+  height:76rpx; 
+  display:flex;
+  flex-wrap:nowrap;
+
+}
+.date_list_item_left{
+  font-family: HelveticaNeue;
+  font-size: 28rpx;
+  line-height:32rpx;
+  color: #AAAAAA;
+  letter-spacing: 0;
+  width:75rpx;
+}
+.date_list_item_time{
+  margin-bottom:16rpx;
+
+}
+.date_list_item_right{
+  height:76rpx;
+  flex-direction:column;
+  display: inline-flex;
+  align-items:left;
+  justify-content: center;
+}
+.date_list_item_right_find{
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #AAAAAA;
+  letter-spacing: 0;
+  line-height:76rpx;
+  position:absolute;
+  right:0;
+  top:0;
+}
+.date_list_item_title{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height:40rpx;
+  width:380rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.date_list_item_address{
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #AAAAAA;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width:380rpx;
+}
+
+.date_edit_item{
+  border-bottom: 1px solid #EFEFEF;
+  position: relative;
+  margin-left:40rpx;
+  color:#353535;  
+  padding-top:36rpx;
+  padding-bottom:36rpx;
+  vertical-align:top;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+
+}
+
+.date_edit_item_lebel{
+  color: #888888;
+  letter-spacing: 0;
+  line-height: 40rpx;
+}
+.date_edit_item_cont{
+
+  line-height:40rpx;
+  vertical-align:top;
+  min-height:40rpx;
+  width:100%;
+}
+.date_edit_item_cont_imgs{
+   padding-left:120rpx; 
+}
+.date_edit_cont_img_box{
+  width:120rpx;
+  height:120rpx;
+  display:inline-block;
+  margin-right:30rpx;
+  margin-bottom:30rpx;
+}
+.date_edit_cont{
+  padding:0rpx 40rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height: 24rpx;
+}
+.date_edit_item_imgs{
+  margin:40rpx 0 0 0;
+  border-bottom:1rpx solid #EFEFEF;
+}
+.date_edit_cont_img{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 8rpx;
+
+}
+.date_edit_cont_img_box{
+  width:120rpx;
+  height:120rpx;
+  margin-right:30rpx;
+  position:relative;  
+  display:inline-block;
+  border-radius: 8rpx;
+}
+.date_item_invite{
+  border-right:12rpx solid rgba(85, 215, 3,0.5);
+}
+.date_item_cancle{
+  border-right:12rpx solid  #D8D8D8;
+}

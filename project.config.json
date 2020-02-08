@@ -1,0 +1,249 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": false,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.1",
+	"appid": "wxb518954af3e70b39",
+	"projectname": "unibbs",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": [
+				{
+					"name": "test",
+					"pathName": "",
+					"title": "",
+					"cacheKey": ""
+				}
+			]
+		},
+		"conversation": {
+			"current": 0,
+			"list": [
+				{
+					"name": "test",
+					"query": "",
+					"boxQI": "",
+					"service": {}
+				}
+			]
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": 0,
+					"name": "选择分类",
+					"pathName": "pages/date/classify/index",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 1,
+					"name": "二手发布成功",
+					"pathName": "pages/date/success/index",
+					"query": "from=create&id=958",
+					"scene": 1007
+				},
+				{
+					"id": 2,
+					"name": "进入编辑模式",
+					"pathName": "pages/date/create/index",
+					"query": "id=730&type=edit",
+					"scene": "1001"
+				},
+				{
+					"id": 3,
+					"name": "个人中心",
+					"pathName": "pages/set/index/index",
+					"query": "openid=ok-v05b64-9Qc-ihreCiXqJGqh7k",
+					"scene": 1001
+				},
+				{
+					"id": 4,
+					"name": "进入指定个人主页",
+					"pathName": "pages/set/index/index",
+					"query": "openid=ok-v05UD-Qvlu73xyNida_DY36Ws",
+					"scene": 1001
+				},
+				{
+					"id": 5,
+					"name": "我的分享",
+					"pathName": "pages/date/share/index",
+					"query": "id=162",
+					"scene": "1001"
+				},
+				{
+					"id": 6,
+					"name": "编辑个人主页介绍",
+					"pathName": "pages/set/textArea/index",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 7,
+					"name": "进入指定大学主页",
+					"pathName": "pages/date/index/index",
+					"query": "college=利物浦大学",
+					"scene": "1001"
+				},
+				{
+					"id": 8,
+					"name": "进入详情页面",
+					"pathName": "pages/date/detail/index",
+					"query": "id=1554",
+					"scene": 1001
+				},
+				{
+					"id": 9,
+					"name": "测试打开外网",
+					"pathName": "pages/test/index",
+					"query": "from=share&id=20171010000000_9",
+					"scene": "1007"
+				},
+				{
+					"id": 10,
+					"name": "重置大学",
+					"pathName": "pages/date/city/index",
+					"query": "type=edit&id=20170927000000_9",
+					"scene": "1001"
+				},
+				{
+					"id": 11,
+					"name": "微信消息",
+					"pathName": "pages/date/index/index",
+					"query": "from=share&id=20171111000000_626"
+				},
+				{
+					"id": -1,
+					"name": "日程申请",
+					"pathName": "pages/set/apply/index",
+					"query": "from=find&id=20170927000000_9"
+				},
+				{
+					"id": -1,
+					"name": "扫描二维码",
+					"pathName": "pages/date/index/index",
+					"query": "from=qrcode&id=123",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "邀请好友",
+					"pathName": "pages/friend/select/index",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "单元测试",
+					"pathName": "pages/test/index",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "分享",
+					"pathName": "pages/date/share/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址选择",
+					"pathName": "pages/date/address/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "好友备注页面",
+					"pathName": "pages/friend/remark/index",
+					"query": "id=16"
+				},
+				{
+					"id": 19,
+					"name": "我的二手",
+					"pathName": "pages/mypush/index",
+					"query": "openid=oq7MT0bj03T-OJIK3HUPX04EB-gY",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "新用户进入",
+					"pathName": "pages/date/index/index",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 21,
+					"name": "私信回复页面",
+					"pathName": "pages/reply/index",
+					"query": "id=878&openid=omIsn40eHB9hndzXGcWtdeCjr6qI",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "搜索二手",
+					"pathName": "pages/date/city/index",
+					"query": "from=uni",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "编辑个人资料",
+					"pathName": "pages/set/form/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布二手",
+					"pathName": "pages/date/create/index",
+					"query": "type=add&category=表白墙",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的消息列表",
+					"pathName": "pages/set/message/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绑定学校",
+					"pathName": "pages/date/city/index",
+					"query": "from=bind&openid=oAyT800qYutT1sa4AMetZFOD1pvU",
+					"scene": null
+				}
+			]
+		}
+	}
+}

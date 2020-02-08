@@ -1,0 +1,149 @@
+
+/*
+  weChat Little reset
+*/
+div,p,view,navigator{
+  display: block;position: relative;box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+    font-family: PingFangSC;
+  }
+i,label{display: inline-block;}
+
+.w30{width:30rpx;}
+.h172{height:172rpx!important;}
+
+
+.ml0{margin-left:0!important;}
+.ml20{margin-left:20rpx;}
+.mr8{margin-right:8rpx;}
+.mr4{margin-right:4rpx;}
+.mr10{margin-right:10rpx;}
+.mr20{margin-right:20rpx;}
+.mr30{margin-right:30rpx;}
+.mr60{margin-right:60rpx;}
+.mr62{margin-right:62rpx;}
+
+
+.mt0{margin-top:0!important}
+.mt16{margin-top:16rpx;}
+.mt24{margin-top:24rpx;}
+.mt36{margin-top:36rpx;}
+.mt40{margin-top:40rpx;}
+.mt100{margin-top:100rpx;}
+.mr30{margin-right:30rpx;}
+.mg16{margin-bottom:16rpx;}
+.mb24{margin-bottom:24rpx;}
+.mb30{margin-bottom:30rpx;}
+.mb60{margin-bottom:60rpx;}
+.mb88{margin-bottom:88rpx;}
+.ml8{margin-left:8rpx;}
+.ml60{margin-left:60rpx;}
+
+.pl30{padding-left:30rpx;}
+.pl60{padding-left:60rpx;}
+.pr30{padding-right:30rpx;}
+
+/*字体大小控制*/
+.fs12{font-size:12rpx;}
+.fs24{font-size:24rpx;}
+.fs28{font-size:28rpx;}
+
+/*左右浮动*/
+.fr{float:right;}
+.fl{float:left;}
+.oh{overflow:hidden;}
+
+.fw100{font-weight:100;}
+
+
+.around{justify-content: space-around!important;}
+.between{justify-content: space-between!important;}
+
+
+.flex{ 
+  box-sizing: border-box;
+  display: flex!important;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.flex_left{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.flex_between{justify-content: space-between} 
+.flex_top{ align-items: flex-start}
+.flex_center{justify-content: center!important;}
+.flex_end{justify-content: flex-end!important;}
+.flex_around{justify-content: space-around}
+.flex_grow{flex-grow:1}
+.flex_wrap{flex-wrap: wrap!important;}
+
+.left{text-align: left;}
+.center{text-align: center;}
+.bg-bg{background: #F5F5F5}
+.opa-3{opacity: 0.3}
+.opa-5{opacity: 0.5}
+.margin0{margin: 0!important;margin-right: 0!important;margin-top: 0!important;margin-bottom: 0!important;margin-left: 0!important;}
+.sq30{width: 30rpx;height: 30rpx;}
+.sq40{width: 40rpx;height: 40rpx;}
+.icon-arrow-down{width: 40rpx;height: 20rpx;}
+.icon-arrow-up{width: 40rpx;height: 20rpx;transform:rotate(180deg);}
+.icon-arrow-down-s{width: 28rpx;height: 14rpx;}
+.icon_back_home{height: 135rpx;width: 135rpx;}
+.icon{height: 36rpx;width: 36rpx;}
+
+.mask3{background: rgba(245,245,245,0.3);}
+.mask7{background: rgba(245,245,245,0.7);}
+.bg-w{background: #fff}
+.bg-btn{background: #189AF8;}
+.color-w{color: #fff}
+
+.border-r{border-right: 1rpx solid #D7D7D7;}
+.border-b{border-bottom:1rpx solid #f5f5f5;}
+.border-ra5{border-radius: 5px;}
+.border-ra15{border-radius: 15px;}
+
+.pad-b10{padding-bottom: 10px;}
+.pad-t10{padding-top: 10px;}
+.gap-10{margin-bottom: 10px;}
+.margin-r5{margin-right: 5px;}
+
+
+.z1{z-index: 1}
+.z10{z-index: 10}
+.z20{z-index: 20}
+.z99{z-index: 99}
+
+.ib{display: inline-block!important;}
+.ab{position: absolute;}
+.rt{top: 0;right: 0;}
+.re{position: relative;}
+.fixed{position: fixed;}
+
+.bold{font-weight:bold;}
+.thin{font-weight: 100;}
+
+.f12{font-size: 12px;}
+.f14{font-size: 14px;}
+.f15{font-size: 15px;}
+.f16{font-size: 16px;}
+.color-tip{color: #999999!important}
+.ph-color-tip{color: #999999}
+
+.back_home_wrap_rb{
+  position: fixed;
+  bottom: 55px;
+  right: 40px;
+}
+.w100{width: 100%;}

@@ -1,0 +1,28 @@
+
+<view class='share_img_box ' >
+  
+  <image src="{{form.current_img}}"  bindload="loadimg" style='display:none;width:320px;height:300px'></image>
+  <!-- 第一个canvas，绘制头图 -->
+  <!-- <canvas canvas-id="top_img"  class='share_img' style="width:320px;height:300px;"/> -->
+  <!-- 第二个canvas 绘制整图 -->
+  <canvas canvas-id="share_img"  class='share_img' style="width:330px;height:524px" bindlongpress="downQrcode"/>
+
+  <view class='share_button flex flex_between'>
+
+      
+       <view class='flex flex_center flex_grow' bindtap="downQrcode" >
+           <image src="../../../img/download.png" class='icon_card_share'></image>保存图片
+      </view>  
+      <view class='share_button_line'>|</view>
+      <view class='flex flex_center flex_grow'>
+            <image src="../../../img/share.png" class='icon_card_share'></image>
+            <button open-type="share" plain='true' class='button_reset share_button_wechat' style='border:none'>分享到群聊</button>
+      </view>  
+  </view>
+
+ 
+</view>
+
+
+
+

@@ -1,0 +1,35 @@
+
+<view >
+
+
+
+    <view class='page_select'>
+        <view   bindtap="clickCollege" data-college="{{item.uName}}" class='page_select_item flex' wx:for="{{list}}" wx:for-item="item">
+           <view>
+              <span class='firend_list_name'>{{item.uName}}</span>
+           </view>
+           <view></view>
+        </view>
+        <view  class='page_select_item flex'>
+           <view>
+              <span class='firend_list_name'>  </span>
+           </view>
+           <view></view>
+        </view>
+    </view>
+    <view class='no_college' wx:if="{{no_college}}">
+        <view>您所在城市暂无大学</view>
+        <view>联系管理员添加</view>
+        <view class='mt20 no_college_admin'>
+        	<image src="../../../img/admin.png" class='icon_admin'></image>
+        </view>
+<!--         <navigator class='fs28 no_college_other '  open-type="navigate"  url="../city/index" hover-class="none">
+            选择其他大学?
+        </navigator> -->
+    </view>
+    <view class='no_college'>
+        <navigator class='no_college_other '  open-type="redirect"  url="../city/index" hover-class="none">
+            选择其他大学?
+        </navigator>
+    </view>
+</view>

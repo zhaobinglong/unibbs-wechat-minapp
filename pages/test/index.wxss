@@ -1,0 +1,13 @@
+
+.bottom{
+    height:80rpx;
+    background-color:#FFF;
+    border:1px solid #efefef;
+    position:fixed;
+    left:0;
+    right:0;
+}
+
+
+
+

@@ -1,0 +1,40 @@
+
+<view class="feed">
+
+    <view wx:for="{{list}}" wx:key class='feed_item' wx:key="{{item.id}}"  >
+         <view bindtap="onClick" data-item="{{ item }}">
+             <view class='feed_item_top' >
+                <image mode="aspectFit" src="/img/v2/sellDown.png"  class='feed_item_sell_down' wx:if="{{ item.status == '2' }}"></image>
+                <header userinfo="{{ item }}"  obj="{{ item }}" />
+                <text class="page_list_cont {{item.status=='2'?'page_list_item_sell':''}}">{{ item.price ? (item.symbol + item.price + ',') : '' }}{{item.cont}}</text>
+             </view>
+             <view class="feed_imgs" wx:if="{{item.imgs.length}}">
+               <view class="feed_img" wx:for="{{ item.imgs }}" wx:key>
+                 <image mode ="aspectFill" src="{{item}}" class='feed_img_photo' ></image>
+               </view> 
+             </view>
+             <view class="feed_category">#{{ item.category }}</view>
+           </view>
+           <view class="feed_share">
+<!--             <view class="feed_share_item color-tip" bindtap="onLike" data-item="{{ item }}">
+              <image src="../../img/index_zan.png"  class='feed_share_icon' ></image> {{ item.liked == '0' ? '点赞':item.liked }}
+            </view> -->
+<!--             <view class="feed_share_item color-tip"  data-item="{{ item }}">
+              <image src="../../img/view.png"  class='feed_share_icon' ></image> {{ item.views }}
+            </view> -->
+            <view class="feed_share_item color-tip" bindtap="onClick" data-item="{{ item }}">
+              <image src="../../img/v2/comment.png"  class='feed_share_icon '></image> {{ item.comment_num ? item.comment_num : '评论' }}
+            </view>
+             <view class="feed_share_item">
+                <button open-type="share" data-item="{{ item }}" plain='true' class='button_reset fs28 flex color-tip'>
+                  <image src="/img/transpond.png"  class='feed_share_icon'></image> 转发
+                </button>
+              </view>
+           </view>
+       <!-- </navigator> -->
+    </view>
+    
+    <view wx:if="{{!list.length && load_over}}" >
+         <empty />
+    </view>
+</view>

@@ -1,0 +1,61 @@
+.tabBar{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	height:100rpx;
+	background-color:#FFF;
+	font-family: PingFangSC-Regular;
+	font-size: 20rpx;
+	color: #AAAAAA;
+	letter-spacing: 0;
+	/*border-top:1px solid #B4B5B8;*/
+}
+.tabBar_icon{
+	width:50rpx;
+	height:50rpx;
+}
+.tabBar_select{
+   color: #48B8FE;
+}
+.tabBar_icon_pen{
+	width:80rpx;
+	height:80rpx;	
+}
+.tabBar_item{
+    width:33%;
+	text-align:center;
+}
+.tabBar_item_img{
+	font-size:0;
+	position:relative;
+}
+.tabBar_flex{
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   align-items: center;
+   flex-grow:1
+}
+.tabBar_button_reset{
+	position:static;
+	font-family: PingFangSC-Regular;
+	font-size: 20rpx;
+	letter-spacing: 0;
+	line-height:20rpx;
+	background-color:#FFF;
+}
+.tabBar_item_badge{
+	  width: 24rpx;
+	  height: 24rpx;
+	  border-radius: 12rpx;
+	  background-color: #ff344a;
+	  color:#FFF;
+	  font-size:18rpx;
+	  position:absolute;
+	  top:0;
+	  left:50%;
+	  text-align:center;
+}

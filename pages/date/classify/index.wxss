@@ -1,0 +1,32 @@
+.page_select{
+	padding:0 36rpx;
+	border-top: 1rpx solid #e6e6e6;
+}
+.page_select_item{
+	line-height:88rpx;
+	color: #505050;
+	box-shadow: inset 0 -1rpx 0 0 #e6e6e6;
+	font-size:32rpx;
+	/*border-bottom:1rpx solid #e6e6e6;*/
+}
+.no_college{
+	text-align:center;
+	margin-top:50%;
+}
+.no_college_admin{
+	margin:60rpx ;
+}
+.no_college_other{
+	line-height:40rpx;
+    color: #00c8af;
+	font-size:26rpx;
+}
+
+
+
+
+
+
+
+
+

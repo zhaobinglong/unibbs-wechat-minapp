@@ -1,0 +1,7 @@
+
+{
+  "navigationBarTitleText": "选择发布分类",
+   "usingComponents": {
+      "list": "../../../components/list/index"
+   }
+}

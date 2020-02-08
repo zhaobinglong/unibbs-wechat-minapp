@@ -1,0 +1,322 @@
+@import "./common/wxss/icon.wxss";
+@import "./common/wxss/common.wxss";
+@import "./common/wxss/tabBar.wxss";
+@import "./common/wxss/button.wxss";
+@import "./common/wxss/date.wxss";
+
+
+
+
+
+/*公共样式*/
+.border_none{border:0!important;}
+
+.nowrap{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;  
+}
+
+.userInfo_box{
+  background-color:#FFF;
+  margin-top:24rpx;
+}
+.userInfo_input{
+  margin:24rpx 0;
+  padding-left:40rpx;
+  background-color:#FFF;
+}
+
+
+.list{
+  border-bottom:1rpx solid #cfcfcf;
+  padding:20rpx 0;
+}
+.list_head{
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-bottom:20rpx;
+}
+.list_headimg{
+  width:80rpx;
+  height:80rpx;
+  border-radius:50%;
+  margin-right:20rpx;
+}
+.list_name{
+  font-size:28rpx;
+}
+.list_imgs{
+  height:200rpx;
+  width:100%;
+  margin:20rpx 0;
+}
+.list_imgs_item{
+  height:200rpx;
+  width:200rpx;
+  margin-right:10rpx;
+  display: inline-block;
+}
+.list_bottom{
+  display: flex;
+  align-items: center; 
+
+}
+.list_message{
+  color:#8a8a8a;
+  font-size:24rpx;
+  white-space:nowrap;
+}
+.list_cont{
+  font-size:28rpx;
+}
+
+.list_address{
+  font-size:20rpx;
+  color:#999;
+}
+/*列表没数据了*/
+.list_over{
+  line-height:100rpx;
+  text-align:center;
+  font-size:24rpx;
+  color:#808080; 
+  margin-bottom:100rpx;
+}
+/*列表没数据了,多行*/
+.list_over_mul{
+  line-height:50rpx;
+  text-align:center;
+  font-size:24rpx;
+  color:#808080; 
+}
+/*清除button默认样式*/
+.clean_button{
+  background: inherit!important;
+  border: none!important;
+  border-radius: 0!important;
+}
+.clean_button::after{
+  border: none!important;
+}
+.clean_input{
+  outline:none;
+  border:none;
+  list-style: none;
+}
+/*超文本链接*/
+.link_text{
+  color: #48B8FE!important; 
+  font-size:28rpx;
+}
+/*徽标*/
+.badge{
+  width:36rpx;
+  height:36rpx;
+  color:#FFF;
+  font-size:22rpx;
+  line-height:36rpx;
+  background-color:#48B8FE;
+  border-radius:50%;
+  display:inline-block;
+  text-align:center;  
+}
+
+/*表单提示*/
+
+.tip{
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  padding:15rpx 40rpx 10rpx 40rpx;
+  color: #AAAAAA;
+  letter-spacing: 0;
+}
+
+
+/*单个输入框*/
+.userInfo_item{
+  line-height:120rpx;
+  border-bottom: 1px solid #EFEFEF;
+  position: relative;
+  color:#353535;
+  font-size:32rpx;
+  background-color:#FFF;
+  font-family: PingFangSC-Regular;
+}
+.userInfo_group_item{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #48B8FE;
+  letter-spacing: 0;
+  line-height: 40rpx;
+  margin-right:30rpx;
+  background: #FFFFFF;
+  border: 2rpx solid #48B8FE;
+  border-radius: 200rpx;
+  padding:0 22rpx;
+  display:inline-block;
+}
+
+.userInfo_item_icon{
+  width:40rpx;
+  height:40rpx;
+  vertical-align:middle;
+  margin-right:30rpx;
+}
+.userInfo_item_icon_right{
+  width:40rpx;
+  height:40rpx;
+  vertical-align:middle;
+}
+.userInfo_item_right{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height: 30rpx;  
+  max-width:60%;
+  flex-wrap:nowrap;
+}
+.userInfo_item_right_box{
+  display:flex;
+  flex-wrap:nowrap;
+}
+.userInfo_item_right_content{
+
+}
+.userInfo_item_right_default{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #888888;
+  letter-spacing: 0;
+}
+.userInfo_item_input{
+  height:100rpx;
+  color:#353535;
+  font-size:28rpx;
+}
+.userInfo_item_from{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #48B8FE;
+  letter-spacing: 0;
+  line-height: 48rpx;
+}
+.userInfo_select{
+  width:32rpx;
+  height:24rpx;
+}
+
+/*单个输入框的label*/
+.userInfo_label{
+  padding:0 40rpx;
+  margin-top:40rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #888888;
+  letter-spacing: 0;
+  line-height: 28rpx; 
+}
+
+.userInfo_item_label{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #888888;
+  letter-spacing: 0;
+  line-height: 28rpx; 
+  padding-left:40rpx;
+  margin-top:40rpx;
+}
+
+
+
+
+
+/*好友列表公共样式*/
+.firend_list_avatar{
+  width:72rpx;
+  height:72rpx;
+  vertical-align:middle;
+  margin-right:48rpx;
+}
+
+.firend_list_name{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height: 32rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/*简写样式*/
+.fr{float:right;}
+.fl{float:left;}
+.di{display:inline-block;}
+.tc{text-align:center;}
+
+.w60{width:60rpx;}
+.w140{width:140rpx;}
+.h30{height:30rpx;}
+.h99{height:99rpx;}
+.h120{height:120rpx;}
+.h140{height:140rpx;}
+
+
+.date_share{
+  text-align:center;
+  font-family: PingFangSC-Light;
+  letter-spacing: 0;
+  background-color:#FFF;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:999;
+  background: #F3F7F9;
+}
+.date_share_box{
+  margin-bottom:6rpx;
+}
+.date_share_menu_item{
+  text-align:center;
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height:108rpx;
+  background-color:#FFF;
+  margin-bottom:2rpx;
+  position:relative;
+}
+.date_share_menu_button{
+  opacity:0;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+.mask{
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-color:rgba(0,0,0,0.7)
+}
+.f-mask{
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background-color:rgba(0,0,0,0.2)
+}
+
+.br15{border-radius: 15px;}
+.none{display: none}

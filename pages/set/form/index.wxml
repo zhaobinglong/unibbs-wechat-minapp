@@ -1,0 +1,31 @@
+
+<view class='page_textarea'>
+    <view class="edit">
+    	<view class="flex flex_between ">
+          <image src="{{userInfo.avatarUrl}}" class='userInfo_avatar'></image>
+    	</view>	    	
+    	<view class="flex flex_between edit_item">
+    		<view class="edit_name">昵称</view>
+    		<input placeholder="" data-name="nickName"  auto-focus class="flex_grow" value="{{ userInfo.nickName }}" bindinput="editInput"/>
+    	</view>
+    	<view class="flex flex_between edit_item ">
+    		<view class="edit_name">微信号</view>
+    		<input placeholder="微信号码" data-name="wechat"  auto-focus class="flex_grow f14 bold" placeholder-class="ph-color-tip thin"  value="{{ userInfo.wechat }}" bindinput="editInput" />
+    	</view>
+     	<view class="flex flex_between edit_item">
+    		<view class="edit_name">抖音</view>
+    		<input placeholder="抖音账号" data-name="douyin" auto-focus class="flex_grow f14 bold" placeholder-class="ph-color-tip thin"   value="{{ userInfo.douyin }}" bindinput="editInput"/>
+    	</view>
+     	<view class="flex flex_between edit_item">
+    		<view class="edit_name">微博</view>
+    		<input placeholder="微博账号" data-name="weibo" auto-focus class="flex_grow f14 bold" placeholder-class="ph-color-tip thin"   value="{{ userInfo.weibo }}" bindinput="editInput"/>
+    	</view>
+     	<view class="flex flex_between flex_top edit_item">
+    		<view class="edit_name">个人签名</view>
+    		<textarea  style="width:auto" placeholder="添加个人描述" auto-focus class="flex_grow f14 bold edit_input" placeholder-class="ph-color-tip thin"   value="{{ userInfo.ad }}" data-name="ad" bindinput="editInput"/>
+    	</view>
+    </view>
+    <view class="" style="padding: 0 60rpx">	
+		<button bindtap="formSubmit" class='button button_save mt24 br15' >保存</button>
+    </view>
+</view>

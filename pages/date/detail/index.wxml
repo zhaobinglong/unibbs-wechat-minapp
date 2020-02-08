@@ -1,0 +1,89 @@
+
+<view wx:if="{{form.status == 0}}" class='detail_off'>
+    <image src="../../../img/empty.png" class='icon_empty mg16'></image>
+    <view>信息不存在</view>
+    <view class='detail_off_back '>
+        <navigator class='button button_back '  open-type="redirect"  url="../index/index?college={{form.college}}" hover-class="none">
+            回到主页
+        </navigator>
+    </view>
+</view>
+<view wx:else>
+    
+     <goods form = "{{form}}"></goods>
+      <div class='detail_box '>
+          <view class='flex flex_between detail_cont_item'>
+            <view>分享至：</view>
+            <view class='flex'>
+                
+<!--                 <navigator class='flex fs28 mr60'  open-type="navigate"  url="../share/index?from=detail&id={{form.id}}" hover-class="none">
+                    <image src="../../../img/card.png" class='icon_share '></image>生成卡片
+                </navigator> -->
+                <button open-type="share" plain='true' class='button_reset fs28 flex '><image src="../../../img/wechat_detail.png" class='icon_share'></image>微信群</button>
+            </view>
+          </view>
+          <view class='detail_cont_item flex' bindtap='backHome'>
+            <view>返回{{form.college}}主页</view>
+          </view>
+      </div>
+      <view class=' date_edit_cont '>
+        <view class='replay_message_item' wx:key  wx:for="{{comment}}" wx:for-item="item" wx:if="{{item.cont}}" bindtap="commentClick" data-index="{{index}}" data-item="{{ item }}">
+           <image src="{{item.avatarUrl || '../../../img/logo.png'}}" class='replay_message_item_img'></image>  
+           
+           <view class='replay_message_item_right'>
+              <view class='replay_message_item_right_top'>
+                <view class='replay_message_item_nickname'>{{item.nickName || '匿名用户'}}</view>
+                <view class='replay_message_item_time'>{{item.createtime}}</view>                
+              </view>
+
+              <view>{{item.cont}}</view>
+           </view>       
+        </view>
+      </view>
+      <view style='height:100rpx'></view>
+
+
+      
+      <form report-submit="true" bindsubmit="formSubmit">
+          <view  class="detail_button_box flex {{is_x?'is_x':''}}" wx:if="{{form.is_creater && show_action}}"> 
+             <!-- 0删除，1正常，2卖出, 3下架 -->
+             <button bindtap="delClick"  data-status="2"   class='button  button_del' wx:if="{{ form.is_goods }}">已卖出</button> 
+             <button bindtap="delClick"  data-status="0"   class='button  button_del' >删除</button> 
+             <button class='button button_save'  bindtap="editClick" >编辑</button > 
+          </view>
+          <view  class="detail_button_box {{is_x?'is_x':''}}" style="padding: 14rpx 40rpx;" wx:else > 
+              <input name="input" class="detail_message_input" placeholder="{{placeholder}}"  bindinput="bindInput"  value="{{form.message}}"  />
+              <button class='button_reset button_comment' plain formType="submit" catchtap="pushMessage" open-type="getUserInfo" bindgetuserinfo="getUserInfoByButton">发送</button> 
+<!-- 
+                <button open-type="share" data-item="{{ item }}" plain='true' class='button_reset fs28 flex color-tip'>
+                  <image src="/img/share.png"  class='icon margin-r5'></image> 分享
+                </button> -->
+          </view>
+      </form>
+<!--       <form report-submit="true" bindsubmit="formSubmit">
+          <view  class="detail_button_box"  style="padding: 14rpx 40rpx;"> 
+              <input name="input" class="detail_message_input" placeholder="有问题？私信问问主人吧"  bindinput="bindInput"  value="{{form.message}}"  />
+              <button class='button button_send' formType="submit" catchtap="pushMessage" >发送</button> 
+          </view>
+      </form> -->
+
+</view>
+
+
+
+<view class='share_img_box ' wx:if="{{show_qrcode}}">
+  <canvas canvas-id="share_img"  class='share_img' style="width:320px;height:500px"/>
+  <view class='tc mt40'>
+       <button class='button button_down' bindtap="downQrcode">保存图片,分享到朋友圈</button>
+  </view>
+ 
+</view>
+
+<!-- <view class="back_home_wrap_rb ib">
+  <image src="/img/v2/goHome.png" class='icon_back_home' bindtap="backHome"></image> 
+</view> -->
+
+
+
+
+

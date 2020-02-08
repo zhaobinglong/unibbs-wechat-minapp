@@ -1,0 +1,31 @@
+
+
+    <form bindsubmit="collectSubmit"  report-submit="true" >
+
+  <view class="tabBar  flex z99 {{is_x?'is_x':''}}" >
+   <view class='tabBar_item '   bindtap='clickHome'>
+      <view class='tabBar_item_img'>
+        <image mode="aspectFit" src="{{page == 'home'?tabBar_home_select:tabBar_home}}" class='tabBar_icon'></image>
+      </view>
+      <view class='{{page =="home"? "tabBar_select":""}}'>首页</view>
+   </view>
+   <view class='tabBar_item ' bindtap="clickPush">
+   <!-- <navigator class='tabBar_item tabBar_item_img'   url="../create/index?type=add" hover-class="none"> -->
+      
+      <view class='tabBar_item_img'>
+        <image mode="aspectFit" src="../../img/push.png" style='width:72rpx;height:60rpx'></image>
+      </view>
+      <view class='color-red'>发布</view>
+   <!-- </navigator> -->
+   </view>
+   <view class='tabBar_item ' bindtap='clickUser'>
+      <view class='tabBar_item_img'>
+        <view class='tabBar_item_badge' wx:if="{{unread>0}}">{{unread}}</view>
+        <image mode="aspectFit" mode="aspectFit" src="{{page == 'user'?tabBar_user_select:tabBar_user}}" class='tabBar_icon'></image>
+      </view>
+      <view class='{{page!="home"?"tabBar_select":""}}'>我的</view>
+   </view>
+
+ </view> 
+
+   </form>

@@ -1,0 +1,14 @@
+@import "../../common/wxss/common.wxss";
+@import "../../common/wxss/button.wxss";
+@import "../../common/wxss/icon.wxss";
+@import "../../common/wxss/userinfo.wxss";
+
+.empty{
+  text-align:center;
+  margin-top:208rpx;
+  font-size: 26rpx;
+}
+.empty_icon{
+  width: 182rpx;
+  height: 156rpx;   
+}

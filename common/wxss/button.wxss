@@ -1,0 +1,124 @@
+/*公共按钮*/
+.button_box{
+  margin-top:30rpx;  
+  text-align:center;
+}
+.button{
+  border:0!important;
+  font-size:32rpx;
+  text-align:center;
+  font-family: PingFangSC-Regular;
+  letter-spacing: 0;
+  display:inline-block;
+  border-radius:0;
+  line-height:88rpx;
+}
+.button::after{
+  border: none;
+}
+
+.button_save{
+  color:#FFF;
+  background: #00caba;
+  padding:0 60rpx;
+  display:block;
+  flex-grow:1;
+  white-space: nowrap;
+}
+.button_del{
+  background: #FFFFFF;
+  display:block;
+  width: 200rpx;
+  line-height:88rpx;
+  color: #8c8c8c;
+  border-color:#FFF;
+}
+.button_back{
+  color:#FFF;
+  background-color: #00caba;
+  width:272rpx;
+  height:76rpx;
+  line-height:76rpx;
+  border-radius:8rpx;
+}
+.button_send{
+  color:#FFF;
+  display:inline-block;
+  border-radius:8rpx;
+  padding:0!important;
+  width:160rpx;
+  line-height:72rpx;
+  z-index:999;
+  background-color: #71dccf;
+  margin-left:10rpx;
+}
+
+.button_success_share{
+  color:#FFF;
+  background-color: #04c500;
+  width:420rpx;
+  line-height:88rpx;
+  border-radius:44rpx;  
+}
+
+.button_share{
+  background: #FFF;
+  color: #515151;  
+}
+
+.button_red_del{
+  background: #E74342;
+  color:#FFF;
+}
+.button_down{
+  color:#FFF;
+  background: #65b997;
+  padding: 0 40rpx;
+  border-radius:46rpx;
+  margin:0 auto;
+}
+
+.button_reset{
+  border:none!important;
+  display:inline-block;
+  line-height:auto;
+  margin:0;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  font-size: auto!important;
+}
+.button_reset::after{
+  border: none;
+}
+
+.button_add_wechat{
+  border-radius: 8rpx;
+  color: #FFF;
+  background-color:#7ed321;
+  font-size:28rpx;
+  line-height:44rpx;
+  padding:0 20rpx;
+}
+
+.button_wechat_login{
+  border: 1rpx solid #189AF8!important;
+  border-radius: 5rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  color: #219DF8!important;
+  line-height: auto;
+  text-align: center;
+  width: 80px;
+}
+
+.button_search{
+  font-size:28rpx;
+  color: #71dccf;
+}
+.button_comment {
+  color: #189AF8!important;
+  font-size: 24rpx;
+  padding-left: 22rpx;
+}

@@ -1,0 +1,21 @@
+
+<view >
+      <view class='join' >
+           <image src='../../../img/join.jpeg' mode='widthFix' class='join_img'></image>
+           <view class='button_box'>
+              <view class='button button_join' bindtap='clickAddWechat'>添加微信</view>
+           </view>
+      </view>
+<!--       <view class='about_box'>
+           <view class='about_title'>
+              关于出个二手
+           </view> 
+           <view class='about_p'>
+              <text>关注留学生中的二手买卖,我们正在寻找更多同学加入，扫码添加管理员</text>
+           </view>
+            <view>
+               <image src='../../../img/admin.png' class='icon_admin'></image>
+            </view>
+      </view> -->
+
+</view>

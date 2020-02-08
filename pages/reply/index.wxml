@@ -1,0 +1,62 @@
+
+
+<goods form="{{form}}"></goods>
+<view >
+<!--     <view class='replay_top'>
+      <swiper  indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange" style="height:{{Hei}}">
+        <block wx:for="{{form.imgs}}"  wx:for-item="imgname">
+          <swiper-item>
+            <image src="{{imgname}}" class='swiper_item'  bindload='imgLoad'  mode="widthFix" data-name="{{imgname}}"  />
+          </swiper-item>
+        </block>
+      </swiper>     
+    </view> -->
+<!--       <view class=' date_edit_cont '>
+          <view class='detail_cont_item detail_cont'>
+              <view class='date_edit_item_cont mb24 '>
+                {{form.symbol?form.symbol:'￡'}}{{form.price}},{{form.cont}}
+              </view>
+              <view class='detail_address flex' wx:if="{{form.address}}">
+                 <image src="../../../img/address.png" class='icon_share'></image>
+                 <view>{{form.address}}</view>
+              </view>            
+          </view>
+      </view> -->
+      <view class=' date_edit_cont '>
+          <view class='replay_message_item' wx:for="{{list}}">
+             <image src="{{item.avatarUrl || '../../img/logo.png'}}" class='replay_message_item_img'></image>  
+             <view class='replay_message_item_time'>{{item.createtime}}</view>
+             <view class='replay_message_item_right'>
+                <view class='replay_message_item_nickname'>{{item.nickName || '匿名用户'}}</view>
+                <view>{{item.cont}}</view>
+             </view>       
+          </view>
+      </view>
+
+
+      <view style='height:100rpx'></view>
+
+
+      
+      <form report-submit="true" bindsubmit="formSubmit">
+
+<!--           <view  class="detail_button_box" > 
+              <input name="input" class="detail_message_input" placeholder="回复"  bindinput="bindInput"  value="{{form.message}}"  />
+              <button class='button button_send' formType="submit"  open-type="getUserInfo" bindgetuserinfo="getUserInfo">发送</button> 
+          </view> -->
+
+          <view  class="detail_button_box" style="padding: 14rpx 40rpx;"> 
+              <input name="input" class="detail_message_input" placeholder="有问题？私信问问主人吧"  bindinput="bindInput"  value="{{form.message}}"  />
+              <button class='button button_send' formType="submit" catchtap="pushMessage" >发送</button> 
+          </view>
+      </form>
+
+
+</view>
+
+
+
+
+
+
+

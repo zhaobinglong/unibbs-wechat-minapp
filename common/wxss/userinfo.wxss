@@ -1,0 +1,19 @@
+.userinfo_level {
+  width: 28rpx;
+  height: 28rpx;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 4rpx;
+  color: #fff;
+  display: inline-block;
+  line-height: 28rpx;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  font-size: 24rpx;
+  margin-left: 8rpx;
+  margin-top: -4rpx;
+}
+.userinfo_level_guan {
+   background: #1AAD19;
+}

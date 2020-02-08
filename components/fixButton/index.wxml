@@ -1,0 +1,4 @@
+
+<view  class='fixed' bindtap="onClick">
+    <view ><image src="../../img/push.png"  class='fixed_icon'></image></view>
+</view>

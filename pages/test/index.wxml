@@ -1,0 +1,9 @@
+
+<view >
+
+<view>点击数字，数字滚动到页面中央</view>
+<view wx:for="{{line}}" style="font-size:80rpx;line-height:100rpx" bindtap="click">{{item}}</view>
+<view class='bottom' style="bottom:{{ bottom }}">
+	<input value="{{ value }}" focus wx:if="{{ showInput }}" bindfocus="bindfocus" bindblur="bindblur" adjust-position="{{ position }}"></input>
+</view>
+</view>

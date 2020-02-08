@@ -1,0 +1,62 @@
+<scroll-view scroll-y="true" class="">
+  <view class="">
+        <!-- year-month -->
+        <view class="calendar_top">
+            <view class="calendar_top_toogle" bindtap="handleCalendar" data-handle="prev">
+                <view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
+            </view>
+            <view class="clendar_top_date">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+            <view class="calendar_top_toogle" bindtap="handleCalendar" data-handle="next">
+                <view class="next-handle box box-lr box-align-center box-pack-center">》</view>
+            </view>
+        </view>
+        <!-- week -->
+        <view class="weeks flex " style="border-bottom: 1px solid #eceeef;">
+            <view class="basic color-orange" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+        </view>
+        <view class="" style="height: 30px;"></view>
+        <!-- date-box -->
+        <view class="gap-20"  wx:for="{{total_day}}" wx:for-index="index">
+            <!-- month -->
+            <view class="_month" wx:if="{{total_month[index]}}" style="height: 60rpx;text-align: center;line-height: 60rpx;">{{total_month[index]}}月</view>
+            <!-- day-box -->
+            <view class="flex row " style="">
+                <!-- empty -->
+                <view  class="color-white basic" wx:for="{{total_empty[index]}}" >
+                </view>
+                <!-- day -->
+                <block wx:for="{{total_day[index]}}" wx:key="{{sidx}}">
+                <view class="basic color-grey" style="" wx:if="{{!item.hide}}" >
+                    <!-- 修改备份{{item.time<cur_time ? 'invalid':''}}  -->
+                    <!-- 
+                        1.如果是周末,字体为橘色#e99428
+                        2.如果在选中范围内,背景颜色为橘色,字体为白:①开始选择item.time==begin ;②结束选择item.time>=begin && item.time<=end
+                        3.无效日期,满房不显示边框,字体变灰(只需要判断price是否为真--price:null,num,满房)
+                        4.判断是否显示特价标签:①未选择时bg-tejia;②选中时bg-tejia1;
+                        5.第一行显示这周
+                     -->
+                    <view style=""  class="item column   {{item.weekend && item.price?'color-orange':''}} {{item.time==begin ? 'bg-checked':''}} {{item.time==begin&&item.is_preferential_price ? ' bg-tejia1':''}} {{(item.time>=begin && item.time<=end )? 'bg-checked' : ''}}  {{(item.time>=begin && item.time<=end&&item.is_preferential_price )? 'bg-tejia1': ''}}  {{(item.price==null || (item.is_full_booked&&!item.booked_border))?'tips':''}} {{item.price&&item.is_preferential_price?'bg-tejia0':''}}  " data-time="{{item.time}}" data-check="{{item.is_full_booked}}" data-sidx="{{item.index}}" catchtap='checkDay'>
+                        <view style="font-size: 28rpx;margin-top: 5px;" class="text-hide {{end==item.time?'shift':''}}">{{item.time==begin?'入住':(item.time==end?'退房':item.day)}}</view>
+                        <view style="font-size: 24rpx;" class="text-hide {{end==item.time?'none':''}}">{{item.price==null?'':item.price}}</view>
+                    </view>
+                    <!-- <view class="color-orange {{item.time==end ? 'color-white':''}}" style="font-size: 12px;margin-top: 0px;">{{item.price}}</view> -->
+                </view>
+                </block>
+            </view>
+        </view>
+        <view class="" style="height: 50px;"></view>
+    </view>
+</scroll-view>
+<!-- <view class="btn-bottom flex border-t" catchtap='goTo' style="background: #fff!important">
+    <view style="width: 70%;background-color: #fff;color: #727171;text-align: left;padding-left: 15px;font-size: 28rpx;">房费总额: <span class="color-orange fs-20" >
+    <span>{{(totalPrice && totalPrice!='--'&&totalPrice!='计算中...')?'¥':''}}</span>
+    {{totalPrice?totalPrice:'--'}}</span>
+    </view>
+    <view style="width: 30%;height: 42px;" class="{{end ? '':'opacity'}} bg-orange ">下一步</view>
+</view> -->
+<!-- 提示 -->
+<view id='mask' bindtap="closeMask" wx:if="{{showMask}}">
+   <div class='mask_box'>
+       <p class='mask_text'>{{msg}}</p>
+   </div>
+</view>

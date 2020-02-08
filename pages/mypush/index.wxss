@@ -1,0 +1,169 @@
+.page_list{
+  width:50%;
+  display:inline-block;
+  vertical-align:top;
+}
+.page_list_no{
+	color:#9f9f9f;
+	background-color:#f0f0f0;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	text-align:center;
+}
+.page_list_no_cont{
+	margin-top:50%;
+}
+.page_list_no_icon{
+	width:152rpx;
+	height:128rpx;
+}
+.page_list_left{
+	padding:0 10rpx 0 20rpx;
+}
+.page_list_right{
+	padding:0 20rpx 0 10rpx;
+}
+.page_list_city{
+	line-height:80rpx;
+	height:80rpx;
+	text-align:center;
+	font-size:28rpx;
+	background-color:#000;
+	justify-content:center;
+	border-bottom:1rpx solid #666;
+	color:#FFF;
+}
+.page_list_type{
+    height:100rpx;
+	background-color:#000;
+	width: 100%;
+	white-space: nowrap;
+	color:#FFF;
+}
+.page_list_top{
+    height:400rpx;
+    text-align:center;
+    line-height:400rpx;
+    overflow:hidden;
+}
+.page_list_college{
+	overflow:hidden;
+    background-color:#F2F2F2; 
+	font-size:24rpx;
+	color:#666;
+	padding: 10rpx ;
+}
+
+.page_list_college_img{
+	width:100%;
+}
+.page_list_college_logo{
+	height:150rpx;
+	width:150rpx;
+	border:1rpx solid #e1e1e1;
+}
+.page_list_college_member{
+	width:60rpx;
+	height:60rpx;
+}
+
+.page_list_item{
+
+	background-color:#FFF;
+	box-shadow:0 1px 2px 0 rgba(0,0,0,.1);
+	border-radius:8rpx;
+	margin-top:20rpx;
+}
+.page_list_img_wrap{
+	max-height:400rpx;
+	overflow:hidden;
+}
+.page_list_img{
+	width:100%;
+}
+.page_list_bottom{
+	padding:0 36rpx;
+}
+.page_list_cont{
+	font-size:32rpx;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	word-wrap: break-word; 
+	word-break: normal; 
+	color: #4a4a4a;
+	padding:24rpx 0 0 0;
+}
+.page_list_user{
+	color:#666;
+	padding:10rpx;
+	font-size:28rpx;	
+}
+/*.page_list_cont::after{content: "..."; position: absolute; right: 0; padding-left: 80rpx;}*/
+.page_list_headimg{
+	width:60rpx;
+	height:60rpx;
+	border-radius:50%;
+}
+.scroll-view-item{
+	line-height:100rpx;
+	/*width:60rpx;*/
+	display:inline-block;
+	font-size:28rpx;
+	padding:0 20rpx;
+}
+.list_type_item_select{
+   color:#65b997;
+}
+.list_head_right{
+	text-align:right;
+}
+.list_old_price{
+	font-size:24rpx;
+	color:#8a8a8a;
+	text-decoration:line-through
+}
+.page_list_item_address{
+	color: #c8c8c8;
+	font-size:24rpx;
+}
+.page_list_item_price{
+	color: #f5a623;
+	font-size:40rpx;
+}
+.list_price{
+  color:#d56455;
+  font-size:50rpx;
+  line-height:30rpx;
+  font-weight:500;
+}
+.list_phone{
+
+  border:1rpx solid #65b997;
+  font-size:24rpx;
+  color:#65b997;
+  padding:4rpx 6rpx;
+  border-radius:6rpx;
+}
+.button{
+	background-color:#65b997;
+	color:#FFF;
+	display:inline-block;
+	padding:0 60rpx;
+	margin:0 auto;
+	margin-top:200rpx;
+}
+.page_list_is_bottom{
+	line-height:100rpx;
+	text-align:center;
+	font-size:24rpx;
+	color:#808080;
+}
+
+
+
+

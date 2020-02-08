@@ -1,0 +1,10 @@
+
+{
+  "navigationBarTitleText": "UNIBBS",
+  "usingComponents": {
+    "bar": "../../../components/bar/index",
+    "waterfall": "../../../components/waterfall/index",
+    "feed": "../../../components/feed/index",
+    "fixButton": "../../../components/fixButton/index"
+  }
+}

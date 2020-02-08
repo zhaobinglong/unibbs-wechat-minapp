@@ -1,0 +1,7 @@
+
+{
+  "navigationBarTitleText": "私信回复",
+  "usingComponents": {
+    "goods": "../../components/goods/index"
+  }
+}

@@ -1,0 +1,51 @@
+@import "../../common/wxss/common.wxss";
+@import "../../common/wxss/button.wxss";
+@import "../../common/wxss/icon.wxss";
+
+.detail_box{
+  padding:0 36rpx;
+  font-size:32rpx;
+  color:#4a4a4a;
+}
+.detail_cont{ 
+  padding: 24rpx;
+  font-size: 32rpx;
+  padding-top: 0
+}
+.detail_swiper {
+  min-height: 100rpx;
+}
+.detail_avatar{
+  width:72rpx;
+  height:72rpx;
+  border-radius:50%;
+  margin-right:16rpx;
+}
+.detail_address{
+  color:#808080;
+  font-size:24rpx;
+  color: #c8c8c8;
+  padding: 24rpx;
+}
+.detail_price{
+   color: #F55D33;
+   font-size:40rpx;
+   position: absolute;
+   right: 0;
+   top: 10px;
+   /*height: 80rpx;*/
+  text-align: right;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.detail_icon_sell {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.swiper_item{
+  width:100%;
+}

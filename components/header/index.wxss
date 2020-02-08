@@ -1,0 +1,32 @@
+@import "../../common/wxss/common.wxss";
+@import "../../common/wxss/button.wxss";
+@import "../../common/wxss/icon.wxss";
+@import "../../common/wxss/userinfo.wxss";
+
+.header{
+  font-size:28rpx;
+  color:#333;
+  position: relative;
+}
+.header_date {
+  font-size: 22rpx;
+  line-height: 43rpx;
+  color: #666;
+}
+
+.detail_cont_item{
+  word-wrap: break-word; 
+  word-break: normal; 
+  padding:24rpx 0;
+}
+.detail_avatar{
+  width:80rpx;
+  height:80rpx;
+  border-radius:50%;
+  margin-right:16rpx;
+}
+.report {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

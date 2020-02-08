@@ -1,0 +1,62 @@
+.weeks {
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    align-items: flex-start;
+    font-size: 28rpx;
+    width: 100%;
+    z-index: 80;
+    background-color: #fff;
+}
+.days {
+    height: 500rpx;
+}
+.grid {
+text-align: center;flex-grow: 1;display: flex;flex-direction: column;width: 14.28%;max-width: 14.28%; 
+}
+.day {
+    width: 50rpx;
+    height: 50rpx;
+    color: #727171;
+    font-size: 26rpx;
+    font-weight: 200;
+}
+.border-radius {
+    border-radius: 5PX;
+    position: relative;
+    left: 0;
+    top: 0;
+    color: #fff!important;
+}
+
+.basic {
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: 100rpx;
+    width: 14%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.calendar_top{
+    text-align:center;
+    padding:20rpx 0;
+}
+.clendar_top_date{
+    display:inline-block;
+}
+.calendar_top_toogle{
+    display:inline-block;
+    padding:0 20rpx;
+}
+._month{color: #b5b1b1;font-weight: 300;}
+.shift{padding-top: 20rpx;}
+.color-orange{color: #e99428}
+.tips{color: #ccc}
+.flex{padding-left: 1%;}
+.item{height: 90rpx;width: 90%;margin: auto;position: relative;}
+.bg-tejia{background-size: 60% 60%;background-position: 108% -10%;background-repeat:no-repeat;}
+.bg-tejia0{background-image:url('http://webpic.estay.com/webui/images/common/tejia.png')!important;background-size: 60% 60%;background-position: 108% -10%;background-repeat:no-repeat;border-radius: 8px;border: 1px solid #E78C00;}
+.bg-tejia1{background-image: url('http://webpic.estay.com/webui/images/common/tejia1.png')!important;background-size: 60% 60%;background-position: 108% -10%;background-repeat:no-repeat;border-radius: 8px;border: 1px solid #E78C00;}
+.border{border: 1px solid #E78C00;}
+.border-tejia{border: 1px solid #E78C00;border-radius: 8px;}
+.bg-checked{background-color: #E78C00!important;border-radius: 8px;color: #fff;}

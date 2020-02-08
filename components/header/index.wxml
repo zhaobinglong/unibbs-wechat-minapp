@@ -1,0 +1,23 @@
+
+<view class='header '>
+  <view class='detail_cont_item  flex flex_between '>
+      <view class='flex' catchtap="clickAvatar" data-item="{{ userinfo }}">
+         <image src="{{userinfo.avatarUrl}}" class='detail_avatar' ></image>
+         <view>
+         	<view class='bold'>
+            {{userinfo.nickName ? userinfo.nickName : 'unibbs'}}
+            <view class="userinfo_level userinfo_level_guan" wx:if="{{ userinfo.user_status === '2' }}">官</view>
+          </view>
+         	<view class="header_date">{{ timestamp }}</view>
+         </view>
+         
+      </view>
+      <view bindtap='clickAddWechat' class='button button_add_wechat' wx:if="{{ userinfo.wechat }}">+ 微信</view>    
+      <view catchtap='clickReport' class="report" >···</view>
+<!--       <view class="">
+        <button open-type="share" data-item="{{ item }}" plain='true' class='button_reset fs28 flex color-tip'>
+          <image src="/img/share.png"  class='icon margin-r5'></image> 分享
+        </button>
+      </view>  -->     
+  </view>
+</view>

@@ -1,0 +1,29 @@
+
+
+.apply_name{
+  font-family: .PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #353535;
+  letter-spacing: 0;
+  line-height: 32rpx;
+}
+.apply_label{
+  font-family: PingFangSC-Regular;
+  font-size: 22rpx;
+  color: #AAAAAA;
+  letter-spacing: 0;
+  line-height:22rpx;
+  margin-top:4rpx;
+}
+.apply_ignore{
+  color:#AAA;
+  font-size:28rpx;
+}
+.apply_ok{
+  color:#CCC;
+}
+.apply_middle{
+  padding:0 40rpx;
+  color:#E7E7E7;
+}
+

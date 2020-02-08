@@ -1,0 +1,153 @@
+
+
+.scroll-view-item{
+	height:200px;
+}
+
+.scroll-view_H{
+  width: 100%;
+  white-space: nowrap;
+}
+.scroll-view-item_H{
+  width: 100%;
+  display: inline-block;
+}
+.scroll-img{
+  width: 100rpx;
+  height:100rpx;
+    margin-right:72rpx;
+  display: inline-block;    
+}
+.img{
+  width: 100rpx;
+  height:100rpx;
+
+}
+
+.bc_green{
+	background:green;
+}
+
+.bc_red{
+	background:red;
+}
+
+.bc_yellow{
+	background:yellow;
+}
+.bc_blue{
+	background:blue;
+}
+
+.calendar_weeks {
+    text-align: center;
+    align-items: flex-start;
+    background-color: #fff;
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    color: #353535;
+    letter-spacing: 0;
+    background: #F9F9F9;
+    margin-bottom:40rpx;
+}
+.calendar_title{
+    font-family: PingFangSC-Light;
+    font-size: 50rpx;
+    color: #353535;
+    letter-spacing: 0;    
+}
+.calendar_weeks_item {
+    flex-shrink: 0;
+    flex-grow: 0;
+    line-height: 60rpx;
+    width: 14%;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 22rpx;
+    color: #353535;
+    letter-spacing: 0;
+}
+.calendar_item_weekend {
+    color:#AAAAAA!important;
+}
+.calendar_icon{
+    height:36rpx;
+    width:20rpx;
+}
+.calendar_icon_today{
+    width:36rpx;
+    height:36rpx;
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-18rpx)
+
+
+}
+
+.grid {
+text-align: center;flex-grow: 1;display: flex;flex-direction: column;width: 14.28%;max-width: 14.28%; 
+}
+
+
+
+.calendar_day{
+    height: 92rpx;
+    width:92rpx;
+    margin: auto;
+    position: relative;
+    font-size: 40rpx;
+    margin-right:3rpx;
+    margin-left:3rpx;
+    letter-spacing: 0;
+    border-radius:50%;
+    color: #353535;
+}
+.calendar_day_today{
+    background-color: rgba(72,184,254,0.15)!important
+}
+.calendar_day_checked{
+    background-color: #48B8FE!important;
+    color:#FFF!important;
+}
+.calendar_day_no_empty{
+    background-color: #F4F4F4;
+}
+.calendar_day_date{
+    font-family: PingFangSC-Thin;
+    font-size: 40rpx;
+    letter-spacing: 0;    
+}
+.calendar_day_label{
+    font-family: PingFangSC-Regular;
+    font-size: 18rpx;
+    letter-spacing: 0;
+    position:absolute;
+    bottom:6rpx;
+    left:0;
+    right:0;
+}
+.basic {
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: 100rpx;
+    width:14%;
+    box-sizing: border-box;
+    text-align: center;
+    display:static;
+}
+.calendar_top{
+    text-align:center;
+    padding-top:30rpx;
+    padding-bottom:40rpx;
+    position:relative;
+}
+.clendar_top_date{
+    display:inline-block;
+    line-height:36rpx;
+    margin:0 40rpx;
+}
+
+
+

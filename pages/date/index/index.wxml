@@ -1,0 +1,111 @@
+
+
+  
+
+ <scroll-view  scroll-y="true" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;background:#F5F5F5" bindscrolltolower="lower" wx:if="{{!is_first_loading}}" bindscroll="bindscroll">
+    <view class=''>
+        <view class="f-mask z1" wx:if="{{show_subcate}}" bindtap="clickTypeMore"></view>
+        <view class="re z10">
+
+          <!-- 顶部学校信息 -->
+          <view class='page_college pad-b10'>
+             <view class='flex' bindtap='clickLogo' >
+                 <image src="{{college.logo}}" mode="aspectFit" class='page_college_logo'  ></image>
+                 <view class='page_college_name'>{{college.uName}}</view>
+                 <image src="../../../img/down.png"  class='icon-arrow-down-s ml8'></image> 
+             </view>
+          </view>
+
+          <!-- 搜索框 -->
+          <view class="page_search pad-b10 border-b">
+               <view class='userInfo_item border_none flex between'> 
+                    <view class='flex userInfo_item_input_box page_search_input'>
+                      <image src="../../../img/search.png" class='icon_search userInfo_item_input_icon'></image>
+                      <input name="input" class="userInfo_item_input " placeholder="搜索关键词" bindfocus="clickInput" value="{{value}}" />
+                    </view>
+               </view>
+          </view>      
+
+          <!-- 分类 -->
+          <view class="page_list_type {{show_subcate?'margin0':''}} {{float_nav?'fixed rt':''}}" >
+             <scroll-view  scroll-x="true" style="position: absolute; top:0; height: 72rpx; " >
+                <view  bindtap="clickClassify" data-classify="全部" data-level="first" class="page_list_type_item {{'全部'==classify?'list_type_item_select':''}}" >全部</view>
+                <view  bindtap="clickClassify" data-classify="{{item.name}}" data-level="first" class="page_list_type_item {{item.name==classify?'list_type_item_select':''}} {{ index === types.length - 1 ? 'page_list_type_item_last' : '' }}" wx:for="{{types}}" wx:for-item="item" wx:key="index">{{item.name}}</view>
+             </scroll-view>
+              <view class="page_list_type_item ab rt flex flex_center margin0 mask7" style="width: 36px;height: 36px;" bindtap="clickTypeMore">
+                <image   src="../../../img/down.png"  class='{{ show_subcate? "icon-arrow-up":"icon-arrow-down" }}' style="transition: all 0.3s ease 0s;"></image> 
+              </view>
+             <view class="page_list_subcate" wx:if="{{ show_subcate }}">
+               <view wx:key wx:for="{{current_category}}" class="page_list_type_subcate">
+                  <view class="page_list_type_subcate_name page_list_first">{{ item.name }}</view>
+                  <view wx:key wx:for="{{ item.subCategory }}" wx:for-item="sub" class="page_list_type_subcate_name" bindtap="clickType" data-type="{{ sub }}" data-level="second">{{ sub }}</view>
+                </view>
+             </view>
+          </view> 
+        </view>
+        
+        <view class='page_banner' bindtap="clickBanner">
+            <image src="{{college.top_img}}" class='page_list_college_img' mode="widthFix" ></image>
+            <view class='page_list_top_yesterday'>昨日访客 {{ list.length? yesterday : '0'}}</view>
+<!--             <view class="page_banner_type">
+              <view class="page_banner_type_item {{ current_top_type === 'city' ? 'page_banner_type_item_select' : '' }}" data-item="city" bindtap="onClickBannerType">同城</view>
+              <view class="page_banner_type_item {{ current_top_type === 'college' ? 'page_banner_type_item_select' : '' }}" data-item="college" bindtap="onClickBannerType">校内</view>
+            </view> -->
+        </view>
+
+        <!-- 学校信息 -->
+<!--         <view class='flex  flex_between page_list_college'>
+           <view class='flex '>
+
+               <image src="{{college.logo}}" class='page_list_college_logo' bindtap='clickLogo' ></image>
+               <view class='page_list_college_desc'>
+                    <view class='fs28 flex'>
+                     <view class='page_list_college_name'>{{college.uName}}</view>
+                     <image src="../../../img/pass.png"  class='icon_price ml8'></image>
+                    </view>
+                    <view class='fw100'>{{college.count}}位成员·{{college.num}}个发布</view>
+               </view>   
+           </view>
+          <view class='flex flex_top'>
+             <image src="{{item.avatarUrl}}" wx:key wx:for="{{college.member}}" class='page_list_college_member mr8' wx:if="{{index<3}}"></image>
+             <button open-type="share" plain='true' class='button_reset'><image src='../../../img/member_more.png' class='page_list_college_member'></image></button>
+          </view>  
+        </view> -->        
+        <view >
+
+        <block wx:if="{{ is_goods }}">
+          <waterfall list="{{list}}" load_over="{{load_over}}"></waterfall>
+        </block>
+        
+        <block wx:else> 
+          <feed list="{{list}}" load_over="{{load_over}}" bindclickevent="onClickEvent" bindlikedevent="onUserLike"></feed>
+        </block>
+        
+        </view>
+    </view>
+
+<!--      <view wx:else class='page_list_no'>
+       
+       <view class='page_list_no_cont'>
+           <image src="../../../img/admin.png" class='icon_admin'></image>
+           <view>添加管理员，成为校园合伙人</view>
+       </view>
+       
+       <navigator  class='button'  url="../create/index"  hover-class="none">
+          发布第一个
+       </navigator> 
+    </view> -->
+
+ <view  wx:if="{{no_page}}" class=''>
+  <view class="list_over_mul">不能再扯了，没有数据了</view>
+  <!-- <view class="list_over_mul link_text clean_button" bindtap="clickBanner">加入校园合伙人</view > -->
+ </view>
+ </scroll-view>
+
+ <fixButton ></fixButton> 
+
+<!-- <bar college="{{college.uName}}" page="home" unread="{{unread}}" is_x="{{is_x}}"></bar> -->
+
+
+
+

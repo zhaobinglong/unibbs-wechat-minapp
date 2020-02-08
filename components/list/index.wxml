@@ -1,0 +1,19 @@
+<!-- 这是分类页面的组件 -->
+<view class="list">
+
+
+
+    <view wx:for="{{list}}" class='list_item'  wx:key="{{item.id}}"  >
+       
+ 
+      <!-- <image mode ="widthFix" src="{{item.avatarUrl}}" class='page_list_headimg'  ></image> -->
+      <view class="category"><image class="icon_classify " src="/common/img/icon/classify/{{item.id}}.png"></image>{{item.name}}</view>
+      <view class="flex flex_wrap">	
+      	<view wx:key wx:for="{{item.subCategory}}" wx:for-item="subCategory" class="left  subCategory " data-obj="{{subCategory}}" data-classify="{{ item.name }}" bindtap="handleClick">
+      		<view class="subCategoryItem {{index%3!=0?'pl30':''}} {{index%3==2?'':'border-r'}}">{{subCategory}}</view>
+      	</view>
+      </view>
+    </view>
+
+
+</view>

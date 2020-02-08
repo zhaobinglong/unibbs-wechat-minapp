@@ -1,0 +1,42 @@
+
+
+ <!-- 列表视图下 如果一个活动都没有，展示icon -->
+ <view class='page_success' >
+     <view class='page_success_top_box'>
+        <image src="../../../img/success.png" class='icon_success'></image>
+     </view>
+     <view class='page_success_cont'>立即分享可获得更多曝光</view>
+
+
+<!--      <view class='page_success_share_box'>
+        <button class='tc page_success_share_item' open-type='share' plain="true">
+            <view><image src="../../../img/weixin.png" class='page_success_img' ></image></view>
+            <view>微信</view> 
+        </button>           
+     </view> -->
+     <!-- <navigator class=''  open-type="navigate"  url="../share/index" hover-class="none"> -->
+      <!-- <view class='fs24 page_success_bottom '>分享给好友,有助于更快卖出去哦！</view> -->
+      <!-- </navigator> -->
+	  <view class=" mt100" >
+        <button class='button_success_share flex flex_center' open-type='share'  >
+           <image src="../../../img/share-wechat.png" class='icon_share_wechat'></image>
+           分享至微信群
+        </button>  
+	     
+	  </view> 
+      <view bindtap="pushAgain" class='page_success_back' >再发一条</view>   
+    <view class="back_home_wrap_b">
+      <navigator
+        url="/pages/date/index/index"
+        open-type="redirect"
+        class='ib'
+        hover-class='none'
+      >
+        <image src="/img/v2/goHome.png" class='icon_back_home'></image> 
+      </navigator> 
+    </view>
+ </view>
+
+
+
+

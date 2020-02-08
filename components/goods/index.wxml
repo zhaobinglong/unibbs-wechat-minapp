@@ -1,0 +1,28 @@
+<view class='detail_box '>
+  <header userinfo="{{ form }}" obj="{{ form }}" />
+</view>
+<view class='detail_cont' >
+  <text >{{form.cont}}</text> 
+  <view> {{ form.cont_tips }} </view> 
+  <image mode ="widthFix" src="../../img/sell.png" class='detail_icon_sell' wx:if="{{ form.status == '2' }}" mode="aspectFit"></image>  
+</view>
+<view class="detail_swiper">
+  <swiper  indicator-dots="{{indicatorDots}}"  indicator-active-color="#7ed321" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange" style="height:{{Hei}}" wx:if="{{ form.imgs.length }}">
+    <block wx:key wx:for="{{form.imgs}}"  wx:for-item="imgname">
+      <swiper-item>
+        <image bindtap="clickImg" src="{{imgname}}" class='swiper_item'  bindload='imgLoad'  mode="widthFix" data-name="{{imgname}}"  />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='detail_price ib bg-w' wx:if="{{ form.price }}" >{{form.symbol}}{{form.price}}</view>
+</view>
+
+
+<view class='detail_address flex flex_between' wx:if="{{ form.address && form.address != '你在哪里？' }}">
+   <view  class='flex '>
+       <image src="../../img/address.png" class='icon_address mr4' wx:if="{{form.address}}"></image>
+       <view>{{form.address}}</view>
+   </view>
+</view>            
+
+

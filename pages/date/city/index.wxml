@@ -1,0 +1,38 @@
+
+<!-- 选择自己的学校 -->
+<view >
+      <div class="page_search">
+           <view class='userInfo_item border_none flex between'> 
+                <view class='flex userInfo_item_input_box'>
+                  <image src="/img/search.png" class='icon_search userInfo_item_input_icon'></image>
+                  <input name="input" focus class="userInfo_item_input" placeholder="{{ placeholder }}" bindinput="bindInput" value="{{value}}" bindblur="bindBlur" />
+                </view>
+                <view class='button_search' bindtap="searchByCollege">搜索</view>
+           </view>
+           <view class='search_hot' wx:if="{{show_hot}}">
+              <view>热门</view>
+              <view >
+                 <view wx:for="{{hot}}" wx:key wx:for-item="item" class='search_hot_item' bindtap="clickCity" data-college="{{item}}">{{item}}</view>
+              </view>
+           </view>
+      </div>
+      <!-- <view wx:for="{{list}}" wx:for-item="group" > -->
+        <!-- <view class='firend_label'>{{group.letter}}</view> -->
+        <view class='userInfo_box search_resourse'>
+            <view   bindtap="clickCity" data-college="{{item.uName}}" wx:key class='page_search_item flex' wx:for="{{list}}" wx:for-item="item">
+               <view>
+                  <span class='firend_list_name'>{{item.uName}}</span>
+               </view>
+               <view></view>
+            </view>
+        </view>
+        <view class='userInfo_box search_resourse'>
+            <view   bindtap="clickUni" data-id="{{item.id}}" wx:key class='page_search_item flex' wx:for="{{ unis }}" wx:for-item="item" wx:if="{{ item.status == '1' }}">
+              <view class='search_item flex between'>
+                <view class="search_item_cont">{{ item.cont }}</view>
+                <view class="search_item_college">{{ item.college || '' }}</view>
+              </view>
+            </view>
+        </view>
+      <!-- </view> -->
+</view>

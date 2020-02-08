@@ -1,0 +1,16 @@
+
+page{
+  background-color:#FFF;
+}
+.page_textarea{
+  padding:28rpx 24rpx;
+  margin-bottom:20rpx;
+}
+
+.page_textarea_cont{
+  font-size:28rpx;
+  height:100rpx;
+  width:97%;
+  padding:8rpx;
+  margin:0 auto;
+}

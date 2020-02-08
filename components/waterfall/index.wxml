@@ -1,0 +1,58 @@
+
+<view class="waterfall">
+
+    <view class='page_list page_list_left' wx:if="{{ list.length }}">
+
+          <view wx:for="{{list}}" wx:key class='page_list_item' wx:key="{{item.id}}" wx:if="{{index%2==0}}">
+             
+                 <navigator class=''   url="/pages/date/detail/index?id={{item.id}}" hover-class="none">
+
+
+                     <image mode ="widthFix" src="{{item.imgs[0]}}" class='page_list_img' wx:if="{{item.imgs.length}}" ></image>
+                     <view class='page_list_item_bottom ' >
+                        <view class="page_list_cont {{item.status=='2'?'page_list_item_sell':''}}">
+                         {{item.cont}}
+                        </view>
+                        <view class='page_list_user flex between'>
+                           <view class='flex page_list_user_item'>
+                              <image mode ="widthFix" src="{{item.avatarUrl}}" class='page_list_headimg'  ></image>
+                              <view >{{item.nickName}}<view class="userinfo_level userinfo_level_guan" wx:if="{{ item.user_status === '2' }}">官</view></view>
+                           </view>
+                           <view class='flex  page_list_item_price' wx:if="{{item.price && item.status!='2'}}">{{item.symbol}}{{item.price?item.price:'价格待议'}}</view>
+                        </view>
+                        <image mode ="widthFix" src="../../img/sell.png" class='page_list_img_sell' wx:if="{{item.status == '2'}}" ></image>
+                     </view>
+                 </navigator>
+          </view>
+    </view>
+
+    <view class='page_list page_list_right' wx:if="{{ list.length }}">
+
+          <view wx:for="{{list}}" wx:key  class='page_list_item' wx:key="{{item.id}}" wx:if="{{index%2==1}}">
+             
+                 <navigator class=''   url="/pages/date/detail/index?id={{item.id}}" hover-class="none">
+
+
+                     <image mode ="widthFix" src="{{item.imgs[0]}}" class='page_list_img' wx:if="{{item.imgs.length}}" ></image>
+                     <view class='page_list_item_bottom ' >
+                        <view class="page_list_cont {{item.status=='2'?'page_list_item_sell':''}}">
+                         {{item.cont}}
+                        </view>
+                        <view class='page_list_user flex between'>
+                           <view class='flex'>
+                              <image mode ="widthFix" src="{{item.avatarUrl}}" class='page_list_headimg'  ></image>
+                              <view>{{item.nickName}}<view class="userinfo_level userinfo_level_guan" wx:if="{{ item.user_status === '2' }}">官</view></view>
+                           </view>
+                           <view class='flex  page_list_item_price' wx:if="{{item.price}}">
+                              {{item.symbol}}{{item.price?item.price:'价格待议'}}
+                           </view>
+                        </view>
+                        <image mode ="widthFix" src="../../img/sell.png" class='page_list_img_sell' wx:if="{{item.status == '2'}}" ></image>
+                     </view>
+                 </navigator>
+          </view>
+    </view>
+    <view wx:if="{{!list.length && load_over}}" >
+        <empty />
+    </view>
+</view>

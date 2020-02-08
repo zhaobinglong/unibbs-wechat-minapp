@@ -1,0 +1,32 @@
+
+page{
+  background-color:#FFF;
+}
+.edit {
+	font-size: 30rpx;
+	padding: 0 60rpx;
+}
+.edit_item {
+	border-bottom: 1px solid #E5E5E5;
+	padding: 22rpx 0;
+}
+/*.edit_item:last-child{
+    border-bottom: none;
+ }*/
+.edit_name{
+	width: 180rpx;
+	color: #333333;
+  font-size: 16px;
+}
+.edit_input {
+  line-height: 30rpx;
+}
+.userInfo_avatar{
+  width:160rpx;
+  height:160rpx;
+  border-radius:50%;
+  overflow:hidden;
+  margin-right:50rpx;
+  margin-bottom: 48rpx;
+  flex-shrink:0;
+}

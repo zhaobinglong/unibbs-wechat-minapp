@@ -1,0 +1,100 @@
+
+
+
+   <scroll-view  scroll-y="true"  bindscrolltolower="lower"  style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+
+
+        <view class='user_info' >
+              <!-- <image src="../../../img/user_bk.png" mode='center' class='user_info_bk'></image> -->
+
+              <view class='flex flex_top'>
+                <image src="{{userInfo.avatarUrl}}" class='userInfo_avatar' bindtap="clickEdit"></image>
+                <view wx:if="{{ is_me }}">
+                  <!-- 只有头像和昵称全部存在，才确定用户已授权 -->
+                   <!-- <view class='user_info_edit' bindtap="clickEdit" wx:if="{{ userInfo.nickName && userInfo.avatarUrl }}" >编辑资料</view> -->
+                   <button class='button_reset  button_wechat_login' plain='true' open-type="getUserInfo" bindgetuserinfo="getUserInfoByButton" wx:if="{{ !userInfo.nickName }}">微信登录</button>
+                </view> 
+<!--                    
+                <view class="w100">
+                  <button open-type="share" data-item="{{ item }}" plain='true' class='button_reset fs28 flex color-tip flex_end'>
+                    <image src="/img/share.png"  class='icon margin-r5'></image> 分享
+                  </button>
+                </view> -->
+
+<!--                 <view wx:if="{{is_me}}">
+                  <view wx:if="{{is_oauth}}">
+                     <view class='user_info_college'>{{userInfo.college}}</view>
+                     <view class='user_info_ad ' bindtap="showEdit" wx:if="{{is_me}}">
+                       <image src="../../../img/pen.png" class='user_info_pen' ></image>{{userInfo.ad}}
+                     </view>
+                     <view class='user_info_ad '  wx:else>
+                       {{userInfo.ad}}
+                     </view>
+                  </view>
+                  <view wx:else>
+                     <button class='button_reset  user_info_button' plain='true' open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信登陆</button>
+                  </view>                
+                </view> -->                 
+              </view>
+              <view class='user_info_college' wx:if="{{ userInfo.college }}">{{userInfo.college}}</view>
+              <view class='flex user_info_other'>
+                <view class="user_info_other_item pr30" wx:if="{{ userInfo.wechat }}">微信：{{ userInfo.wechat }}</view>
+                <view class="user_info_other_item pr30" wx:if="{{ userInfo.weibo }}">微博：{{ userInfo.weibo }}</view>
+                <view class="user_info_other_item" wx:if="{{ userInfo.douyin }}">抖音：{{ userInfo.douyin }}</view>
+              </view>
+              <view class='user_info_ad' bindtap="showEdit" wx:if="{{ userInfo.ad }}">{{userInfo.ad ? userInfo.ad : '添加个人描述，让大家更好地认识你'}}</view> 
+        </view>
+        <view class="menu" wx:if="{{ is_me }}">
+        <view class='user_info_message flex flex_between ' bindtap="clickMessage" >
+          <view class=" flex flex_center">
+            <image src="../../../img/v2/message.png" mode="aspectFit" class='user_info_message_icon' bindtap="clickMessage" ></image>
+            我的消息
+          </view>
+          <view class="flex flex_center" >
+            <!-- <view class='tabBar_item_badge' wx:if="{{num>0}}">{{num}}</view> -->
+            <view class='user_info_message_badge' wx:if="{{num>0}}">{{num}}</view>
+            <image src="../../../img/v2/enter.png" class='user_info_message_icon'  mode="aspectFit"></image>
+            <!-- <view class='tabBar_item_badge' >{{9}}</view> -->           
+          </view>
+        </view>        
+        <button class='user_info_message flex flex_between' open-type="contact" >
+          <view class=" flex flex_center">
+            <image src="../../../img/v2/kefu.png" mode="aspectFit" class='user_info_message_icon' bindtap="clickMessage" ></image>
+             在线客服
+          </view>
+          <view class="flex flex_center" >
+            <image src="../../../img/v2/enter.png" class='user_info_message_icon'  mode="aspectFit"></image>    
+          </view>
+        </button> 
+        <navigator class='user_info_message flex flex_between ' target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}">
+          <view class=" flex flex_center">
+            <image src="../../../img/v2/comment.png" mode="aspectFit" class='user_info_message_icon' bindtap="clickMessage" ></image>
+             吐槽一下
+          </view>
+          <view class="flex flex_center" >
+            <image src="../../../img/v2/enter.png" class='user_info_message_icon'  mode="aspectFit"></image>        
+          </view>
+        </navigator> 
+      </view>
+        <!-- 分类 -->
+        <view class='my_type flex flex_around'>
+            <view  bindtap="onClickType" data-type="timeline" class=" {{ current_type === 'timeline' ? 'my_type_select' : 'my_type_item' }}" >动态</view>
+            <view  bindtap="onClickType" data-type="shop" class="{{ current_type === 'shop' ? 'my_type_select' : 'my_type_item' }}" >出售</view>
+<!--             <view  bindtap="onClickType" data-type="zan" class="{{ current_type === 'zan' ? 'my_type_select' : '' }}" >它赞过的</view> -->
+        </view>
+        
+        <view wx:if="{{ current_type === 'timeline' }}">
+        	<feed list="{{list}}" load_over="{{ no_page }}"  bindclickevent="onClickEvent" bindlikedevent="onUserLike"></feed>
+        </view>
+        <view wx:else>
+          <waterfall list="{{goods}}" load_over="{{ no_page }}"  ></waterfall>
+        </view>
+   </scroll-view>
+<!--    <view class='user_info_share_box'>
+     <button open-type="share" plain='true' class='button_reset user_info_share_button'>
+        <image src="../../../img/userInfo_share.png" class='user_info_share'></image>
+     </button>
+   </view> -->
+  
+   <!-- <bar college="{{college}}" page="user" is_x="{{is_x}}"></bar> -->
+

@@ -1,0 +1,21 @@
+
+<view >
+  <view wx:if="{{ load_over }}">
+    <view class='message_item flex' wx:key wx:for="{{message}}"  wx:for-index="idx" bindtap="clickMessage" data-id="{{item.id}}" data-openid="{{item.fromopenid}}" data-ershou="{{item.ershou}}">
+       <view class='message_item_left'>
+           <view class='icon_red' wx:if="{{item.status=='0'}}"></view>
+           <image src="{{item.avatarUrl || '../../../img/logo.png'}}" class='message_item_img'></image>
+       </view>
+       <view class='message_item_right'>
+         <view class=''>{{item.nickName || '匿名用户'}}</view>
+         <view class='message_item_cont'>{{item.cont}}</view>
+       </view>
+    </view>
+
+     <view class='date_list_empty' wx:if="{{!message.length}}">
+         <image src="/img/empty.png" class='icon_date_empty'></image>
+         <view class='date_list_none'>当前您没有消息</view>
+     </view>
+    <view class='h120'></view>
+  </view>
+</view>

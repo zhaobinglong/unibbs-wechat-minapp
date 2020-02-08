@@ -1,0 +1,29 @@
+
+
+.message_item{
+  padding:10rpx 40rpx;
+  background-color:#FFF;
+  margin-bottom:10rpx;
+  font-size:24rpx;
+  align-items:flex-start;
+  flex-wrap:nowrap;
+  border-bottom:1rpx solid #f1f1f1;
+}
+.message_item_img{
+  width:56rpx;
+  height:56rpx;
+  border-radius:8rpx;
+  margin-right:40rpx;
+
+}
+.message_item_right{
+  flex-grow:1;
+  overflow:hidden;
+}
+.message_item_cont{
+  color:#999;
+  width:100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

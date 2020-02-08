@@ -1,0 +1,56 @@
+
+<view >
+      <view class='date' >
+         <view class='date_title'>
+           <view class='date_title_item'>{{form.date}}</view>
+           <view class='date_title_item' wx:for="{{week}}" wx:key="{{week_item.index}}" wx:for-item="week_item" wx:if="{{week_item.index==form.week}}">{{week_item.value}}</view>
+         </view>
+
+         <view class='date_list'>
+           <view class='date_list_item flex between'>
+              <view class='flex'>
+                   <view class='date_list_item_left '> 
+                      <view class='date_list_item_time'>{{form.activity.startDate}}</view>
+                      <view class=''>{{form.activity.endDate}}</view>
+                   </view>
+                   <view class="date_list_label date_state_cancel" wx:if="{{form.activity.state=='archived'}}"></view>
+                   <view class="date_list_label date_state_join" wx:else></view>
+                   <view class='date_list_item_right'>
+                      <view class='date_list_item_title'>{{form.activity.state=='archived'?"(已取消): ":""}}{{form.activity.name}}</view>
+                      <view class='date_list_item_address'>{{form.activity.address}}</view> 
+                   </view>               
+               </view>
+               <!-- <span class='badge' wx:if="{{date.num>0}}">{{form.num}}</span> -->
+           </view>
+         </view>
+
+      </view>
+
+      <div class='userInfo_box'>
+          <view class='userInfo_item flex between' wx:for="{{form.applies}}">
+             <view class='flex'> 
+                <view class='di'>
+                    <image src='{{item.profile.avatar}}' class='firend_list_avatar'></image>
+                </view>
+                <view class='di'>
+                   <p class='apply_name'>{{item.profile.name}}</p>
+                   <p class='apply_label'>{{item.description}}</p>
+                </view>
+             </view>
+             <view wx:if="{{item.state == 'pending'}}">
+               <span class='apply_ignore' bindtap="regectApply" data-id="{{item.id}}">忽略</span>
+               <span class='apply_middle'>|</span>
+               <span class='link_text' bindtap="agreeApply" data-id="{{item.id}}">同意</span>
+             </view>
+             <view wx:else>
+               <span class='apply_ignore' wx:if="{{item.state == 'rejected'}}">已忽略</span>
+               <span class='apply_ignore' wx:else>已同意</span>
+             </view>
+          </view>
+      </div>
+<!--        <view class='date_list_empty' wx:if="{{activities.length==0}}">
+           <image src="../../../common/img/icon/date_empty.png" class='icon_date_empty'></image>
+           <view class='date_list_none'>没有需要处理的申请</view>
+       </view> -->
+      <view class='h120'></view>
+</view>

@@ -1,0 +1,121 @@
+/*圆形选择icon*/
+.icon_select{
+    width:44rpx;
+    height:44rpx;
+}
+.icon_card_share{
+	width:40rpx;
+	height:40rpx;
+}
+.icon_price{
+	width:20rpx;
+	height:20rpx;
+}
+.icon_share{
+	width:30rpx;
+	height:30rpx;
+	margin-right:8rpx;
+}
+.icon_share_wechat{
+	width:36rpx;
+	height:36rpx;
+	margin-right:10rpx;
+}
+.icon_share_index{
+	width:80rpx;
+	height:80rpx;
+}
+.message_icon{
+	width:30rpx;
+	height:30rpx;
+	margin-right:20rpx;
+}
+.icon_detail_want{
+	width:30rpx;
+	height:30rpx;	
+}
+.icon_success{
+	width:136rpx;
+	height:136rpx;
+	margin-top:104rpx;
+}
+
+/*对勾选择*/
+.icon_select_right{
+	width:24rpx;
+	height:16rpx;	
+}
+
+/*日程编辑页面的加号iocn*/
+.icon_date_edit_add{
+  width:120rpx;
+  height:120rpx;
+  margin-right:30rpx;
+  position:relative;
+}
+.icon_img_add{
+  width:120rpx;
+  height:120rpx;
+}
+.icon_img_del{
+	width:32rpx;
+	height:32rpx;
+	position:absolute;
+	top:-6rpx;
+	right:-6rpx;
+}
+
+.icon_isAllDay{
+	width:72rpx;
+	height:72rpx;
+}
+
+.icon_address{
+	width:24rpx;
+	height:24rpx;
+
+}
+.icon_search{
+	width:30rpx;
+	height:30rpx;
+	margin-right:24rpx;
+}
+
+/*日程列表为空的时候*/
+.icon_date_empty{
+	width:240rpx;
+	height:216rpx;
+}
+.icon_date_set{
+	
+}
+
+/*向下的箭头*/
+.icon_down{
+	width:24rpx;
+	height:16rpx;
+}
+
+/*好友信息页面*/
+.icon_firend_detail{
+	width:40rpx;
+	height:40rpx;
+}
+
+.icon_admin{
+	width:300rpx;
+	height:300rpx;
+}
+.icon_red{
+	width:8rpx;
+	height:8rpx;
+	border-radius:50%;
+	background-color:#d43c33;
+	z-index:99;
+}
+.icon_empty{
+  width: 182rpx;
+  height: 156rpx;
+
+}
+

@@ -1,0 +1,7 @@
+
+<view >
+
+<web-view src="{{url}}">打开</web-view>
+
+
+</view>

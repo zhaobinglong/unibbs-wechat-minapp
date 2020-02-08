@@ -1,0 +1,5 @@
+
+<view class='page_textarea'>
+    <textarea bindinput="bindTextAreaBlur" class='page_textarea_cont'  placeholder="介绍你要卖的宝贝们" value="{{form.ad}}"/>
+    <button class='button button_save' open-type="getUserInfo" bindgetuserinfo="getUserInfo">保存</button>
+</view>

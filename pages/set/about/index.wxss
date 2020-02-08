@@ -1,0 +1,29 @@
+
+page{
+  background-color:#FFF;
+}
+.about_img{
+  width:100%;
+}
+
+.about_box{
+  background-color:#FFF;
+  padding:60rpx 40rpx 0 40rpx;
+}
+
+.about_title{
+  line-height:54rpx;
+  border-left:6rpx solid #48B8FE ;
+  padding-left:28rpx;
+  margin-bottom:40rpx;
+  font-family: PingFangSC-Light;
+  font-size:50rpx;
+}
+.about_p{
+  font-size:30rpx;
+  line-height:42rpx;
+  color:#353535;
+  font-family:PingFangSC-Light;
+  letter-spacing: 1.4rpx;
+  margin-bottom:40rpx;
+}

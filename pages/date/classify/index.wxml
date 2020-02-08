@@ -1,0 +1,4 @@
+
+<view >
+  <list list="{{classiyf}}" bindhandleClick="clickType"></list>
+</view>

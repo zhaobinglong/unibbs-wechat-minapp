@@ -1,0 +1,43 @@
+
+
+  
+
+ <scroll-view  scroll-y="true" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;" bindscrolltoupper="upper" bindscrolltolower="lower" wx:if="{{!is_first_loading}}" >
+    <view >
+
+            <view wx:for="{{list}}" class='page_list_item' wx:key="{{item.id}}" >
+               
+                   <navigator   url="../date/detail/index?id={{item.id}}" hover-class="none">
+
+                      <view class='page_list_img_wrap'>
+                       <image mode ="aspectFill" src="{{imgbase+item.imgs[0]}}" class='page_list_img' ></image>
+                      </view>
+                       <view class='page_list_bottom' >
+                          <view class='page_list_cont'>
+                           {{item.cont}}
+                          </view>
+                          <view class='flex between'>
+                             <view class='page_list_item_address flex'>
+                              <image src="../../../img/address.png" class='icon_share'></image>{{item.address}}
+                             </view>
+                             <view class='flex page_list_item_price'>
+                              
+                              £{{item.price?item.price:'价格待议'}}
+                             </view>
+                          </view>
+                          
+                       </view>
+                   </navigator>
+            </view>
+
+    </view>
+    <view class='page_list_is_bottom' wx:if="{{no_page}}">
+        不能再扯了～已经没数据了
+    </view>
+
+ </scroll-view>
+ <!--  -->
+
+
+
+

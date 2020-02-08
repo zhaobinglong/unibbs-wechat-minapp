@@ -1,0 +1,207 @@
+page {
+  background: #E5E5E5;
+}
+button::after {
+   border-radius: 0;
+   border: none;
+}
+.user_top{
+  text-align:center;
+  background-color:#FFF;
+  padding:100rpx 0;
+}
+.user_box{
+  text-align:center;
+}
+.user_info{
+  position:relative;
+  background-color:#FFF;
+  padding:24rpx;
+  font-size: 24rpx;
+  color: #333;
+  border-bottom: 2rpx solid #EEEEEE;
+  line-height: 60rpx;
+}
+.user_info_bk{
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  width:100%;
+  filter: blur(20px); 
+  z-index:-1;
+}
+.user_info_edit {
+  border: 1rpx solid #189AF8;
+  border-radius: 5rpx;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  color: #219DF8;
+  line-height: auto;
+  text-align: center;
+  width: 80px;
+}
+.user_info_share_button{
+
+  height:100rpx;
+  text-align:center;
+  
+}
+.user_info_share_box{
+  position:fixed;
+  right:20rpx;
+  bottom:120rpx;
+  height:100rpx;
+  width:100rpx;
+  z-index:2;
+  background-color:#00caba; 
+  border-radius:50%; 
+}
+.user_info_share{
+    width:60rpx;
+    height:60rpx; 
+    margin-left:20rpx; 
+}
+.user_info_pen{
+  width:24rpx;
+  height:24rpx;
+}
+.menu {
+  margin: 17rpx 0;
+}
+.menu:last-child{
+    border-bottom: none;
+}
+
+.user_info_message{
+  padding: 0 24rpx;
+  height: 98rpx;
+  font-size: 28rpx;
+  color: #333;
+  background-color: #FFF;
+  border-bottom: 1rpx solid #efefef;
+  border-radius: 0;
+}
+.user_info_message_item {
+  display: inline-block;
+}
+.user_info_message_icon {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 16rpx;
+}
+.user_info_message_badge {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #FF4242;
+  color: #FFF;
+  border-radius: 50%;
+  line-height: 30rpx;
+  text-align: center;
+
+}
+.user_info_name{
+  font-size:32rpx;
+  line-height:42rpx;
+}
+.user_info_other_item {
+  display: inline-block;
+}
+
+.user_info_button{
+  width: 144rpx;
+  height: 44rpx;
+  line-height:44rpx;
+  border-radius: 8rpx;
+  border: solid 2rpx #ffffff!important;
+  margin:12rpx auto;
+  font-size:26rpx;
+  text-align:center!important;
+  color:#FFF!important;
+  display:block!important;
+}
+
+/*头像*/
+.user_menu_avatar{
+  line-height:140rpx;
+  border-bottom: 1px solid #EFEFEF;
+  color:#353535;
+}
+.userInfo_set_item{
+  position: relative;
+  margin:0 40rpx;
+  color:#353535;
+  padding:30rpx 0;
+}
+.userInfo_avatar{
+  width:160rpx;
+  height:160rpx;
+  border-radius:50%;
+  overflow:hidden;
+  margin-right:50rpx;
+  margin-bottom: 48rpx;
+  flex-shrink:0;
+}
+.userInfo_set_nickname{
+  color:#888;
+  font-size:22rpx;
+  display:inline-block;
+  line-height:32rpx;
+}
+.userInfo_set_realname{
+  color:#353535;
+  font-size:32rpx;
+  line-height:38rpx;
+  width:400rpx;
+  margin:0 auto;
+}
+
+.userInfo_item_icon{
+  width:40rpx;
+  height:40rpx;
+  vertical-align:middle;
+  margin-right:30rpx;
+}
+.userInfo_item_icon_wrap{
+  width:40rpx;
+  margin-right:30rpx;
+  display:inline-block; 
+}
+.userInfo_item_date_num{
+  color:#FFF;
+  font-size:26rpx;
+  line-height:36rpx;
+  display:inline-block;
+  text-align:center;
+  border-radius: 8rpx;
+  background-color: #ff344a;
+  padding:0 8rpx;
+}
+.userInfo_item_college_name{
+  color: #c8c8c8;
+  font-size:26rpx;
+}
+
+
+
+.user_menu_item_last{
+  border-bottom:0!important;
+}
+
+.my_type {
+  background-color: #FFF;
+  padding: 27rpx 0;
+  /*line-height: 50rpx*/
+}
+.my_type_item {
+  display: inline-block;
+  border-bottom: 8rpx solid  #FFF;
+}
+.my_type_select {
+   border-bottom: 8rpx solid  #189AF8;
+   box-sizing:border-box;
+   border-radius: 4rpx;
+   font-weight: 600;
+}
+

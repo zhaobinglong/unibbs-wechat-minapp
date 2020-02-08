@@ -1,0 +1,172 @@
+
+
+<view >
+     <!-- https://examlab.cn/ershou/user.php?code=getLittleImg -->
+     <canvas canvas-id="share_img"  class='share_img'/>
+      <view>
+          <image src="{{form.current_img}}" class='detail_img_top'  mode="widthFix"></image>
+      </view>
+      <div class='userInfo_box date_edit_cont'>
+
+             
+          <!-- 默认展示8张 ，超过8个显示展开按钮,最多显示九张-->
+          <view class='date_edit_item_cont '>
+             <view class='list_imgs'>
+                <scroll-view  scroll-x="true" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;width:100%;white-space: nowrap;">
+                   <image src="{{imgbase+imgname}}" class='list_imgs_item' wx:for="{{form.imgs}}" bindtap="preViewImg"  wx:for-item="imgname" mode="widthFix" data-name="{{imgname}}"></image>
+                </scroll-view>
+             </view>
+          </view>
+           <view class='date_edit_item_cont '>
+             <text>￡{{form.price}},{{form.cont}}</text>
+           </view>
+      </div>
+      <view class='userInfo_box'>
+<!--           <view class='userInfo_item flex between '  open-type="navigate"  url="../company/index" hover-class="none">
+              <view class='date_detail_label'>
+                 价格
+              </view>
+              <view class='userInfo_item_right'>
+                  <view >{{form.unit?form.unit:'¥'}}{{form.price}} </view>
+              </view>
+          </view> -->
+<!--           <view class='userInfo_item flex between border_none'  open-type="navigate"  url="../apply/index" hover-class="none">
+              <view class='date_detail_label'>
+                 新旧程度
+              </view>
+              <view class='userInfo_item_right'> 
+                  <view >{{form.level}} </view>
+              </view>
+          </view> -->
+<!--           <view class='userInfo_item flex between'  open-type="navigate"  url="../../friend/index/index" hover-class="none">
+              <view class='date_detail_label'>重复</view>
+              <view class='userInfo_item_right' wx:for="{{repeat}}" wx:key="{{item.index}}" wx:if="{{item.key == form.repeat}}">{{item.value}}</view>
+          </view> -->
+          <!-- 详情页面的提醒栏目可以单独修改 -->
+<!--           <navigator class='userInfo_item border_none flex between'  open-type="navigate" url="../reminder/index?from=detail&id={{form.id}}" hover-class="none">
+              <view class='date_detail_label'>提醒 </view>
+              <view class='userInfo_item_right' wx:for="{{reminder}}" wx:key="{{item.index}}" wx:if="{{item.key == form.reminder}}">{{item.value}}</view>
+          </navigator> -->
+      </view>
+
+      <!-- 留言区域 -->
+      <view class='userInfo_box detail_message'>
+           <view class='detail_message_top'>
+             <view>留言({{list.length}})</view>
+           </view>
+           <form bindsubmit="formSubmit" report-submit="true">
+             <view class=' detail_message_input_box'>
+                  
+               <input name="input" class="detail_message_input" placeholder="支持好友,说两句"  bindinput="bindInput" data-value="message" value="{{form.message}}"  />
+               <!-- <view> -->
+               <button class='detail_message_button' bindtap="pushMessage" formType="submit">发送</button>
+                 
+               <!-- </view> -->
+           
+             </view>
+          </form>
+           <view class='detail_message_list'>
+               <view wx:for="{{list}}" class='flex detail_message_item' bindtap="clickMessage" data-name="{{item.nickName}}">
+                  <view class='detail_message_item_left'>
+                     <image src="{{item.avatarUrl}}" class='detail_message_img' ></image>
+                  </view>
+                  
+                  <view class='detail_message_item_right'>
+                     <view class='detail_message_item_name flex between'>
+                       <view>{{item.nickName}}</view>
+                       <view>{{item.createtime}}</view>
+
+                     </view>
+                     <view><span class='detail_message_item_tag' wx:if="{{item.tag}}">{{item.tag}}</span>{{item.cont}}</view>
+                  </view>
+              </view>
+           </view>
+      </view>
+      <view style='height:100rpx'></view>
+
+
+      
+
+      <!-- 是创建者 -->
+      <form >
+          <view  class="detail_button_box" >
+                <button class='button button_share'   bindtap="clickShare"> 
+                    <image src="../../../img/share.png" class='icon_share'></image>分享
+                 </button>   
+<!--                 <button class='button button_share'  formType="submit" open-type="share"
+                data-wares_image="http://shareapi.aldwx.com/public/image/template/mini-retailers-img.jpg"
+                data-wares_logo="http://shareapi.aldwx.com/public/image/template/mini-retailers-logo.png"
+                data-wares_title="美丽优选"
+                data-wares_content="我挺喜欢的宝贝，分享给你，进来看看还能领优惠券哦~"
+                data-wares_price="￥61.99扫码购买"
+                bindtap="aldminishare"
+                data-template_key="c4e1cbd4f9886dabf0e3c6a03e4690a6">
+                   <image src="../../../img/share.png" class='icon_share'></image>分享
+                </button> -->
+                <button class='button button_save' bindtap="clickAddWechat" formType="submit">加微信</button>  
+          </view>
+      </form>
+
+
+</view>
+
+
+
+ <!-- 列表视图下 如果一个活动都没有，展示icon -->
+<!--  <view class='date_list_empty' wx:if="{{form.status == '0' }}">
+     <image src="../../../img/empty.png" class='icon_date_empty'></image>
+     <view class='date_list_none'>该二手已经下架</view>
+ </view> -->
+
+<!-- 二维码分享 -->
+<!-- <view class='mask' wx:if="{{showFinger}}" bindtap="cancelMask">
+  <view class='date_scan'>
+    <view class='date_scan_bk  date_scan_top'>
+       <image src="https://api.schedule-app.limijiaoyin.com/api/v1/qrcode?activityId={{form.id}}" class='date_detail_qrcode'></image>  
+    </view>
+    <view class='date_scan_line_box'><image src="../../../common/img/icon/line.png" class='date_scan_line'></image> </view>
+   
+    <view class='date_scan_bk'>
+      <view class='date_scan_name'>{{form.name}}</view>
+      <view class='date_scan_label'>
+         <span class='date_scan_label_text'>长按或扫码进入</span>
+      </view>
+
+      <image src="../../../common/img/icon/fingerprint.png" class='date_detail_finger' bindlongpress="qrcodeLongTouch"></image>
+    </view>
+  </view>  
+</view> -->
+
+
+
+<!-- 申请输入框 -->
+<!-- <view class='mask' wx:if="{{showApply}}" >
+  <view class='date_apply'>
+      <view class='date_apply_title'>和日程创建者打个招呼吧</view>
+      <view class='date_apply_text_box'>
+        <textarea bindblur="bindApplyAreaBlur"  placeholder="申请加入日程的原因" class='date_apply_text'/>
+      </view>
+      <view class='flex between date_apply_button'>
+        <view class='date_detail_button date_detail_button_small date_detail_button_no' bindtap="cancelMask">取消</view>
+        <view class='date_detail_button_middle'>|</view>
+        <view class='date_detail_button date_detail_button_small ' bindtap="apply" data-id="{{form.id}}">确定</view>    
+      </view> 
+  </view>
+</view> -->
+
+<!-- 微信分享 -->
+<!-- <view class='mask' wx:if="{{showShareMenu}}" bindtap="cancelMask">
+  <view class='date_share'>
+    <view class='date_share_box'>
+      <navigator class='date_share_menu_item' open-type="navigate"  url="../../friend/select/index?from=invite&id={{form.id}}" hover-class="none">邀请小程序中的好友</navigator>
+      <view class='date_share_menu_item' >
+        分享给微信联系人
+        <button  open-type="share" class='date_share_menu_button'></button>
+      </view>
+    </view>
+    <view >
+      <view class='date_share_menu_item ' bindtap="cancelMask">取消</view>
+    </view>     
+  </view>
+</view> -->
+

@@ -1,0 +1,18 @@
+@import "../../common/wxss/common.wxss";
+@import "../../common/wxss/button.wxss";
+@import "../../common/wxss/icon.wxss";
+@import "../../common/wxss/userinfo.wxss";
+
+.fixed{
+   position: fixed;
+   width: 80rpx;
+   height: 80rpx;
+   bottom: 30rpx;
+   right: 30rpx;
+}
+.fixed_icon{
+   width: 80rpx;
+   height: 80rpx;
+   border-radius: 50%;
+   box-shadow: 0 2px 10px 0 rgba(0,0,0,.4)
+}
