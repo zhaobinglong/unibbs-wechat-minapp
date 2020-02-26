@@ -20,30 +20,21 @@ Page({
     show_hot:true,
     placeholder:'搜索你的大学',
     unis:[],
-    openid: ''
+    openid: '',
+    keyWord: ''
   },
 
   // from === firstChoose 用户第一次选择大学
   onLoad: function(e) {
-    this.data.from = e.from;
-    if(e.from == 'uni'){
-      wx.setNavigationBarTitle({
-        title: '搜索'
-      })   
-      this.setData({
-        placeholder:'搜索'
-      })  
-    } else if (e.from == 'bind') {
-      this.data.openid = e.openid
-      wx.setNavigationBarTitle({
-        title: '绑定学校'
-      }) 
-    } else if(e.from == 'college'){
-      this.setData({
-        placeholder:'搜索大学'
-      }) 
-    } else {
+   this.getCollegeList()
+  },
 
+  getCollegeList(){
+    if (!wx.getStorageSync('collegList')){
+      systemModel.getColleges('',function(res){
+        console.log(res)
+        wx.setStorageSync('collegList', res)
+      },false) 
     }
   },
 
@@ -54,54 +45,30 @@ Page({
 
   },
   
- 
-  bindInput(e){
-    console.log(e)
-    this.data.value = e.detail.value;
-    if(!e.detail.value){
-       this.setData({
-        list:[],
-        placeholder: '搜索',
-        show_hot:true,
-        value: ''
-       })
-       return false;
-    }
-    
-    this.searchByCollege()
-    // if(this.data.from == 'uni') {
-    //   this.searchMessage(e.detail.value)
-    // }else{
-    //   var self = this;
-    //   systemModel.getColleges(e.detail.value,function(res){
-    //      self.setData({
-    //       list:res,
-    //       show_hot:false
-    //      })
-    //   },false)       
-    // } 
-  },
-  
   // 当搜索框失去焦点时，要记录当前的搜索关键词
   bindBlur(e) {
     console.log(e)
-    let key_word = e.detail.value
-    
+    this.data.keyWord = e.detail.value
   },
   
   // 模糊搜索学校
   searchByCollege () {
     var self = this;
-    if(this.data.from == 'uni') {
-      this.searchMessage(self.data.value)
-    }else{
-      systemModel.getColleges(self.data.value,function(res){
-         self.setData({
-          list:res,
-          show_hot:false
-         })
-      },false)       
-    } 
+    //this.searchMessage(self.data.value)
+    console.log()
+    var reg = new RegExp(this.data.keyWord);
+    let list = wx.getStorageSync('collegList')
+    let items = []
+    for(var i=0;i<list.length;i++){
+      //如果字符串中不包含目标字符会返回-1
+      if(list[i]['uName'].match(reg)){
+        items.push(list[i]);
+      }
+    }
+    this.setData({
+      list: items,
+      show_hot: false
+    })
   },
 
   searchMessage(value){
@@ -255,44 +222,9 @@ Page({
   // 但是可以随时切换学校查看其他学校的信息
   // 该页面还要承载公众号用户的绑定学校任务
   clickCity(e){
-
-     let college = e.currentTarget.dataset.college;
-     if (this.data.from == 'bind') {
-        this.bindCollege(college, this.data.openid)
-     } else {
-       let obj = {
-        openid: wx.getStorageSync('openid'),
-        college: college
-       }
-       wx.setStorageSync('college', college)
-       let userInfo = wx.getStorageSync('userInfo')
-       // 用户第一次选择大学，只能选择一次
-       if (!userInfo.college) {
-         wx.showModal({
-          title: college,
-          content: '只有一次机会选择自己的学校,你确定选择' + college + '吗',
-          success(res) {
-            if (res.confirm) {
-               userInfo.college = college
-               wx.setStorageSync('userInfo',userInfo)
-               userModel.chooseCollege(obj,function(res){
-                 wx.removeStorageSync('collegeInfo')
-                 wx.reLaunch({
-                  url: '../index/index?college='+college
-                 })
-               },false) 
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
-          }
-        })
-       } else {
-          wx.removeStorageSync('collegeInfo')
-          wx.reLaunch({
-            url: '../index/index?college='+college
-          })
-       }
-     }
+    let college = e.currentTarget.dataset.college;
+    let openid = wx.getStorageSync('openid');
+    this.bindCollege(college, openid)
   },
   
   // 公众号绑定学校
@@ -301,22 +233,15 @@ Page({
       openid: openid,
       college: college
      }
-     wx.showModal({
-      title: college,
-      content: '确定绑定' + college + '吗？',
-      success(res) {
-        if (res.confirm) {
-           userModel.chooseCollege(obj,function(res){
-             wx.removeStorageSync('collegeInfo')
-             wx.reLaunch({
-              url: '../index/index?college=' + college
-             })
-           },false) 
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
+
+     userModel.chooseCollege(obj,function(res){
+       wx.removeStorageSync('collegeInfo')
+       wx.setStorageSync('college', college)
+       wx.reLaunch({
+        url: '../index/index?college=' + college
+       })
+     },false) 
+
   },
 
   clickUni (e) {

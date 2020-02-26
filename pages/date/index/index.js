@@ -111,8 +111,7 @@ Page({
        if(e.college){
          this.data.e = e; 
          const college = e.college;
-         this.getList(college);
-         this.getCollege(college);          
+         this.getList(college);         
          if(!wx.getStorageSync('college')){
            wx.setStorageSync('college',college)
          }
@@ -179,11 +178,17 @@ Page({
       }
     }
   },
-  clickInput(){
-    const path = '../city/index?from=uni';
-     wx.navigateTo({
-      url: path
-     })
+
+  // 搜索
+  search(v){
+    console.log(v)
+    let self = this;
+    ershouModel.search({'keyword':v.detail.value},function(res){
+      console.log(res)
+       self.setData({
+        list:res.data
+       })
+    },false) 
   },
 
   // 点击个人中心
@@ -440,10 +445,6 @@ Page({
 
          const list =  self.data.list.concat(r.res);
 
-         if(!list.length && self.data.classify == '全部'){
-            self.clickBanner() 
-         }
-
           self.setData({
             list:list,
             is_first_loading:false
@@ -566,8 +567,18 @@ Page({
         url:url
       })
     },false)
-  }
+  },
 
+  onShareAppMessage: function() {
+    let college = wx.getStorageSync('college')
+    var imageUrl = '/img/v2/default.jpg'
+    var path = "pages/date/index/index?&college=" + college;
 
+    return {
+      title: college,
+      path: path,
+      imageUrl:imageUrl
+    };
+  },
 
 });

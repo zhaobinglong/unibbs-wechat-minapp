@@ -15,32 +15,20 @@ button::after {
 }
 .user_info{
   position:relative;
-  background-color:#FFF;
-  padding:24rpx;
-  font-size: 24rpx;
-  color: #333;
+  background-color:#189AF8;
+  padding: 24rpx;
+  padding-top: 200rpx;
+  font-size: 28rpx;
+  color: #FFF;
   border-bottom: 2rpx solid #EEEEEE;
   line-height: 60rpx;
 }
-.user_info_bk{
-  position:absolute;
-  top:0;
-  right:0;
-  left:0;
-  width:100%;
-  filter: blur(20px); 
-  z-index:-1;
+.user_info_top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
 }
-.user_info_edit {
-  border: 1rpx solid #189AF8;
-  border-radius: 5rpx;
-  padding: 0 20rpx;
-  font-size: 24rpx;
-  color: #219DF8;
-  line-height: auto;
-  text-align: center;
-  width: 80px;
-}
+
 .user_info_share_button{
 
   height:100rpx;
@@ -140,7 +128,6 @@ button::after {
   border-radius:50%;
   overflow:hidden;
   margin-right:50rpx;
-  margin-bottom: 48rpx;
   flex-shrink:0;
 }
 .userInfo_set_nickname{

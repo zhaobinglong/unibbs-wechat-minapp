@@ -1,6 +1,7 @@
 
 const network = require("/utils/network.js");
 const userModel = require("/utils/userModel.js");
+const systemModel = require("/utils/userModel.js");
 const util = require("/utils/util.js");
 //app.js
 // app通用方法  可以在其它页面的js中调用
@@ -80,7 +81,7 @@ App({
       //本地已经保存有openid，说明用户进来过,已经是一个老用户了
       this.getUserInfo(wx.getStorageSync('openid'))
     }else{
-      this.getOpenid();
+      this.getOpenid()
     }
   },
 

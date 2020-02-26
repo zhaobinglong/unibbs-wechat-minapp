@@ -103,11 +103,11 @@
 }
 
 .button_wechat_login{
-  border: 1rpx solid #189AF8!important;
+  border: 1rpx solid #FFF!important;
   border-radius: 5rpx;
   padding: 0 20rpx;
   font-size: 24rpx;
-  color: #219DF8!important;
+  color: #FFF!important;
   line-height: auto;
   text-align: center;
   width: 80px;

@@ -298,18 +298,19 @@ Page({
    getUserInfoByButton (e) {
       let self = this;
       let userInfo = wx.getStorageSync('userInfo')
-      if (!userInfo.nickName || !userInfo.avatarUrl) {
-        if(e.detail.errMsg == 'getUserInfo:ok'){
-          const data = e.detail.userInfo;
-          userInfo.nickName = data.nickName;
-          userInfo.avatarUrl = data.avatarUrl;
-          userModel.updateUser(userInfo,function(res){
-            wx.setStorageSync('userInfo',userInfo)
-            self.getInfo(userInfo.openid)
-          },false)     
-        }else{
-          return false;
-        }
+      if(e.detail.errMsg == 'getUserInfo:ok'){
+        const data = e.detail.userInfo;
+        userInfo.nickName = data.nickName;
+        userInfo.avatarUrl = data.avatarUrl;
+        this.setData({
+          userInfo: e.detail.userInfo
+        })
+        userModel.updateUser(userInfo,function(res){
+          wx.setStorageSync('userInfo',userInfo)
+          self.getInfo(userInfo.openid)
+        },false)     
+      } else {
+        console.log(e)
       }
    }
 

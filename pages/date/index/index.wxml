@@ -18,12 +18,12 @@
 
           <!-- 搜索框 -->
           <view class="page_search pad-b10 border-b">
-               <view class='userInfo_item border_none flex between'> 
-                    <view class='flex userInfo_item_input_box page_search_input'>
-                      <image src="../../../img/search.png" class='icon_search userInfo_item_input_icon'></image>
-                      <input name="input" class="userInfo_item_input " placeholder="输入关键词搜索" bindfocus="clickInput" value="{{value}}" />
-                    </view>
-               </view>
+             <view class='userInfo_item border_none flex between'> 
+                <view class='flex userInfo_item_input_box page_search_input'>
+                  <image src="../../../img/search.png" class='icon_search userInfo_item_input_icon'></image>
+                  <input name="input" class="userInfo_item_input " placeholder="输入关键词搜索" bindblur="search" value="{{value}}" />
+                </view>
+             </view>
           </view>      
 
           <!-- 分类 -->

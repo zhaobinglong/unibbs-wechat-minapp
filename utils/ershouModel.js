@@ -57,14 +57,16 @@ function getList(data,callback,fail){
 
 // 获取指定用户的二手列表
 function getMyList(openid,page,callback,fail){
-
   var url = "/user.php?code=getMyList&openid="+openid+'&page='+page;
   network.get(url,callback,fail);   
-  
 }
 
 
-
+// 搜素
+function search(data,callback,fail){
+  var url = "/wechat.php?ctrl=api&action=search";
+  network.post(url,data,callback,fail);   
+}
 
 module.exports = {
    push:push,
@@ -73,6 +75,7 @@ module.exports = {
    getMyList:getMyList,
    getDetail:getDetail,
    updateMessageCount:updateMessageCount,
-   getMessage:getMessage
+   getMessage:getMessage,
+   search: search
 }
 
