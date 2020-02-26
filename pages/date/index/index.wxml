@@ -8,20 +8,20 @@
         <view class="re z10">
 
           <!-- 顶部学校信息 -->
-          <view class='page_college pad-b10'>
+<!--           <view class='page_college pad-b10'>
              <view class='flex' bindtap='clickLogo' >
                  <image src="{{college.logo}}" mode="aspectFit" class='page_college_logo'  ></image>
                  <view class='page_college_name'>{{college.uName}}</view>
                  <image src="../../../img/down.png"  class='icon-arrow-down-s ml8'></image> 
              </view>
-          </view>
+          </view> -->
 
           <!-- 搜索框 -->
           <view class="page_search pad-b10 border-b">
                <view class='userInfo_item border_none flex between'> 
                     <view class='flex userInfo_item_input_box page_search_input'>
                       <image src="../../../img/search.png" class='icon_search userInfo_item_input_icon'></image>
-                      <input name="input" class="userInfo_item_input " placeholder="搜索关键词" bindfocus="clickInput" value="{{value}}" />
+                      <input name="input" class="userInfo_item_input " placeholder="输入关键词搜索" bindfocus="clickInput" value="{{value}}" />
                     </view>
                </view>
           </view>      
@@ -44,14 +44,10 @@
           </view> 
         </view>
         
-        <view class='page_banner' bindtap="clickBanner">
+        <!-- <view class='page_banner' bindtap="clickBanner">
             <image src="{{college.top_img}}" class='page_list_college_img' mode="widthFix" ></image>
             <view class='page_list_top_yesterday'>昨日访客 {{ list.length? yesterday : '0'}}</view>
-<!--             <view class="page_banner_type">
-              <view class="page_banner_type_item {{ current_top_type === 'city' ? 'page_banner_type_item_select' : '' }}" data-item="city" bindtap="onClickBannerType">同城</view>
-              <view class="page_banner_type_item {{ current_top_type === 'college' ? 'page_banner_type_item_select' : '' }}" data-item="college" bindtap="onClickBannerType">校内</view>
-            </view> -->
-        </view>
+        </view> -->
 
         <!-- 学校信息 -->
 <!--         <view class='flex  flex_between page_list_college'>

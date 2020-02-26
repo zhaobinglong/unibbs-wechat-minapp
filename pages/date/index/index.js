@@ -87,29 +87,6 @@ Page({
       float_nav
     })
   },
-  
-
-  // 点击banner
-  clickBanner () {
-    wx.navigateTo({
-      url: '../../set/join/index'
-    })
-  },
-
-  // bar适应phonex
-  adapt_bar:function () {
-    let self=this;
-    wx.getSystemInfo({
-      success(res) {
-        var model=res.model || '';
-        if (model.match(/iPhone X/ig)) {
-          self.setData({
-            is_x:true
-          })
-        }
-      }
-    })
-  },
 
   // 下拉刷新
   onPullDownRefresh:function(e){
@@ -125,7 +102,6 @@ Page({
   onLoad: function(e) {
      wx.showLoading();
      let self = this;
-     this.adapt_bar()
      
      // 用户通过扫码学校二维码进入,这里参数就是学校的id
      if(e.scene){
@@ -162,30 +138,9 @@ Page({
           types: res
         })
      },false)
-     
-     // 获取昨日访客
-     this.getVister()
-     
-     // 记录访客信息
-     let log = {
-      openid:wx.getStorageSync('openid'),
-      college:wx.getStorageSync('college')
-     }
-     userModel.takeNote(log,function(res){
-        console.log(res)
-     },false)
 
   },
   
-  // 获取昨日访客数量
-  getVister () {
-   userModel.getVisitior(util.getDateStr(-1), this.data.e.college,(res)=>{
-     this.setData({
-        yesterday: res.length + 837
-     })
-     wx.setStorageSync('vister', res)
-   },false)
-  },
 
   onClickBannerType (e) {
     console.log(e)
@@ -204,17 +159,7 @@ Page({
     })
   },
   
-  // 用户点赞事件
-  // 点赞之前需要判断当前storage中有没有用户openid，
-  // 如果没有，表示用户还没有授权
-  onUserLike (e) {
-    
-    const self = this;
-    userModel.userLike(e.detail.id,function(res){
-      console.log(res)
-      self.updateLiked(e.detail.id,res.status)
-    },false)
-  },
+
   // 局部更新列表上的点赞数
   updateLiked (id,status) {
     for (var i = 0; i < this.data.list.length; i++) {
@@ -334,6 +279,14 @@ Page({
      this.setData({
       unread:app.unread
      })
+    
+    if (wx.getStorageSync('college')) {
+      title = 'UNIBBS-' + wx.getStorageSync('college')
+      wx.setNavigationBarTitle({
+        title: title
+      })      
+    }
+
 
     // 如果用户从招聘广告处返回，成员和发布数量显示为0 
     if(app.new_school){
@@ -346,7 +299,6 @@ Page({
        app.new_school = false;
     }
 
-    this.getUnRead(openid)
   },
 
   // 选择城市

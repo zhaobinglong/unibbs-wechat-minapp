@@ -66,7 +66,7 @@
             <image src="../../../img/v2/enter.png" class='user_info_message_icon'  mode="aspectFit"></image>    
           </view>
         </button> 
-        <navigator class='user_info_message flex flex_between ' target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}">
+<!--         <navigator class='user_info_message flex flex_between ' target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}">
           <view class=" flex flex_center">
             <image src="../../../img/v2/comment.png" mode="aspectFit" class='user_info_message_icon' bindtap="clickMessage" ></image>
              吐槽一下
@@ -74,7 +74,7 @@
           <view class="flex flex_center" >
             <image src="../../../img/v2/enter.png" class='user_info_message_icon'  mode="aspectFit"></image>        
           </view>
-        </navigator> 
+        </navigator>  -->
       </view>
         <!-- 分类 -->
         <view class='my_type flex flex_around'>
