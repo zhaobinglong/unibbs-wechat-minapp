@@ -1,6 +1,6 @@
 
 {
-  "navigationBarTitleText": "发布成功",
+  "navigationBarTitleText": "",
   "usingComponents": {
     "bar": "../../../components/bar/index"
   }

@@ -160,6 +160,15 @@ App({
     }
     console.log(obj)
     return obj
-  }
+  },
+
+    // 返回主页
+  backHome (){
+    var url = '/pages/date/index/index';
+    console.log(url)
+    wx.switchTab({
+      url: url
+    })    
+  },
 
 });

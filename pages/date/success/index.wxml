@@ -5,7 +5,7 @@
      <view class='page_success_top_box'>
         <image src="../../../img/success.png" class='icon_success'></image>
      </view>
-     <view class='page_success_cont'>立即分享可获得更多曝光</view>
+     <view class='page_success_cont'>发布成功</view>
 
 
 <!--      <view class='page_success_share_box'>
@@ -24,17 +24,7 @@
         </button>  
 	     
 	  </view> 
-      <view bindtap="pushAgain" class='page_success_back' >再发一条</view>   
-    <view class="back_home_wrap_b">
-      <navigator
-        url="/pages/date/index/index"
-        open-type="redirect"
-        class='ib'
-        hover-class='none'
-      >
-        <image src="/img/v2/goHome.png" class='icon_back_home'></image> 
-      </navigator> 
-    </view>
+      <view bindtap="backHome" class='page_success_back' >回到首页</view>   
  </view>
 
 

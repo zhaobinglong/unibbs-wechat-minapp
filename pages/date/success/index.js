@@ -14,24 +14,9 @@ Page({
      form:{}
   },
   // 在详情页面的分享，要带上来源信息
-  // 每个页面都要写这个函数，不科学呀
   onShareAppMessage: function() {
-    console.log(this.data.form)
-    let is_goods = util.is_goods(this.data.form.category)
-    var title = '' 
-    var imageUrl = ''
-    let price  = '' 
-    if (this.data.form.price) {
-      price = this.data.form.price + this.data.form.symbol + ','
-    } else {
-      price = ''
-    } 
-    if (is_goods){
-      title = this.data.form.college+'：'+ price +this.data.form.cont;
-    } else {
-      title = this.data.form.college+'：'+ this.data.form.cont;
-    }
-    var path = "pages/date/detail/index?&id=" + this.data.form.id;
+    let title = this.data.form.college+'：'+ this.data.form.cont;
+    let path = "pages/date/detail/index?&id=" + this.data.form.id;
     if (this.data.form.imgs.length) {
       imageUrl = this.data.form.imgs[0];
     } else {
@@ -79,19 +64,9 @@ Page({
   // 只要在页面初始化的时候，主动登陆一次，其他时候需要点击登陆按钮完成登陆
   onReady: function() {},
   
-  // 返回主页
-  back:function(){
-    var url = '../index/index?college='+this.data.form.college;
-    wx.redirectTo({
-      url: url
-    })    
-  },
 
-  // 再发一条 
-  pushAgain(){
-     wx.redirectTo({
-       url: '../classify/index'
-     })     
-  },
+  backHome () {
+    app.backHome()
+  }
 
 });

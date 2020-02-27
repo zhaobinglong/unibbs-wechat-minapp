@@ -16,19 +16,19 @@
               </navigator>
         </view>
         <view class="menu" wx:if="{{ is_me }}">
-        <view class='user_info_message flex flex_between ' bindtap="clickMessage" >
+        <!-- <view class='user_info_message flex flex_between ' bindtap="clickMessage" >
           <view class=" flex flex_center">
             <image src="../../../img/v2/message.png" mode="aspectFit" class='user_info_message_icon' bindtap="clickMessage" ></image>
             我的消息
           </view>
           <view class="flex flex_center" >
-            <!-- <view class='tabBar_item_badge' wx:if="{{num>0}}">{{num}}</view> -->
+            <view class='tabBar_item_badge' wx:if="{{num>0}}">{{num}}</view>
             <view class='user_info_message_badge' wx:if="{{num>0}}">{{num}}</view>
             <image src="../../../img/v2/enter.png" class='user_info_message_icon'  mode="aspectFit"></image>
-            <!-- <view class='tabBar_item_badge' >{{9}}</view> -->           
+                      
           </view>
-        </view>        
-        <button class='user_info_message flex flex_between' open-type="contact" >
+        </view>  -->     
+        <!-- <button class='user_info_message flex flex_between' open-type="contact" >
           <view class=" flex flex_center">
             <image src="../../../img/v2/kefu.png" mode="aspectFit" class='user_info_message_icon' bindtap="clickMessage" ></image>
              在线客服
@@ -36,7 +36,7 @@
           <view class="flex flex_center" >
             <image src="../../../img/v2/enter.png" class='user_info_message_icon'  mode="aspectFit"></image>    
           </view>
-        </button> 
+        </button>  -->
 <!--         <navigator class='user_info_message flex flex_between ' target="miniProgram" open-type="navigate" app-id="wx8abaf00ee8c3202e" extra-data="{{ extraData }}">
           <view class=" flex flex_center">
             <image src="../../../img/v2/comment.png" mode="aspectFit" class='user_info_message_icon' bindtap="clickMessage" ></image>

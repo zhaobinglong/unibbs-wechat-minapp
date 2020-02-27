@@ -574,6 +574,13 @@ Page({
         return false;
       }
       }
+   },
+
+   toReport() {
+     wx.showModal({
+      title: '提示',
+      content: '确定举报这条帖子侵权吗？'
+     })
    }
 
 

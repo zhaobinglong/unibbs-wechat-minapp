@@ -25,6 +25,9 @@
           <view class='detail_cont_item flex' bindtap='backHome'>
             <view>返回{{form.college}}主页</view>
           </view>
+          <view class='detail_cont_item flex' bindtap='toReport'>
+            举报
+          </view>
       </div>
       <view class=' date_edit_cont '>
         <view class='replay_message_item' wx:key  wx:for="{{comment}}" wx:for-item="item" wx:if="{{item.cont}}" bindtap="commentClick" data-index="{{index}}" data-item="{{ item }}">
@@ -44,7 +47,6 @@
 
 
       
-      <form report-submit="true" bindsubmit="formSubmit">
           <view  class="detail_button_box flex {{is_x?'is_x':''}}" wx:if="{{form.is_creater && show_action}}"> 
              <!-- 0删除，1正常，2卖出, 3下架 -->
              <button bindtap="delClick"  data-status="2"   class='button  button_del' wx:if="{{ form.is_goods }}">已卖出</button> 
@@ -59,7 +61,6 @@
                   <image src="/img/share.png"  class='icon margin-r5'></image> 分享
                 </button> -->
           </view>
-      </form>
 <!--       <form report-submit="true" bindsubmit="formSubmit">
           <view  class="detail_button_box"  style="padding: 14rpx 40rpx;"> 
               <input name="input" class="detail_message_input" placeholder="有问题？私信问问主人吧"  bindinput="bindInput"  value="{{form.message}}"  />

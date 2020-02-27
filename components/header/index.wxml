@@ -13,7 +13,7 @@
          
       </view>
       <view bindtap='clickAddWechat' class='button button_add_wechat' wx:if="{{ userinfo.wechat }}">+ 微信</view>    
-      <view catchtap='clickReport' class="report" >···</view>
+      <!-- <view catchtap='clickReport' class="report" >···</view> -->
 <!--       <view class="">
         <button open-type="share" data-item="{{ item }}" plain='true' class='button_reset fs28 flex color-tip'>
           <image src="/img/share.png"  class='icon margin-r5'></image> 分享

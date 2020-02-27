@@ -56,6 +56,10 @@
 			"current": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 8,
 			"list": [
@@ -241,6 +245,13 @@
 					"name": "绑定学校",
 					"pathName": "pages/date/city/index",
 					"query": "from=bind&openid=oAyT800qYutT1sa4AMetZFOD1pvU",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新建成功",
+					"pathName": "pages/date/success/index",
+					"query": "from=create&id=1736",
 					"scene": null
 				}
 			]

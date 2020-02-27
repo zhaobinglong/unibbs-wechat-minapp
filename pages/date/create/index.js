@@ -76,16 +76,16 @@ Page({
     default_address: '你在哪里？'
 
   },
-  onShareAppMessage: function() {
-    return {
-      title: app.shareTitle,
-      path: app.shareUrl
-    };
-  },
+  // onShareAppMessage: function() {
+  //   return {
+  //     title: app.shareTitle,
+  //     path: app.shareUrl
+  //   };
+  // },
   // 下拉刷新
-  onPullDownRefresh:function(e){
-     wx.stopPullDownRefresh();
-  },
+  // onPullDownRefresh:function(e){
+  //    wx.stopPullDownRefresh();
+  // },
 
   /**
   * 每次进入前，先判断用户有没有学校

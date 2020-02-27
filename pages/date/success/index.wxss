@@ -1,5 +1,10 @@
 .page_success{
   text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
 }
 .page_success_top_box{
   max-height:600rpx;

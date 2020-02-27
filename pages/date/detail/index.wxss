@@ -68,8 +68,8 @@
 }
 .detail_message_input{
   padding:0 36rpx;
-  height:72rpx;
-  font-size:28rpx;
+  height:100rpx;
+  font-size:32rpx;
   flex-grow:1;
   border-radius: 8rpx;
   background-color: #f4f4f4;

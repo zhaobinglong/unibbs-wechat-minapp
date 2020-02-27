@@ -31,7 +31,7 @@
 
 
       <div class=' mb88'>
-           <view class='page_create_item flex between page_create_item_border' wx:if="{{ form.is_goods }}">
+           <!-- <view class='page_create_item flex between page_create_item_border' wx:if="{{ form.is_goods }}">
               <view class="flex flex_grow" >
                <view class="page_create_item_title mr10 w30" >{{form.symbol}}</view>
                <input name="input" class="create_params" placeholder="价格" bindinput="bindInput" data-value="price"  value="{{form.price}}" class='flex_grow'/>
@@ -43,19 +43,8 @@
                 </view>
 
              </picker>
-           </view>
-
-<!--            <view class='page_create_item flex page_create_item_border'>
-                <view class='flex' style="width:100%">
-                  <image src="../../../img/type.png" class='icon_address mr10' ></image>
-                  <picker mode="selector" range="{{type}}" bindchange="chooseType"  style="width:100%" range-key="{{'name'}}">
-                    <view class="picker">
-                      {{form.type}}
-                    </view>
-                  </picker>
-                </view>
-                <image src="../../../common/img/icon/right.png" class='userInfo_item_icon_right'></image>
            </view> -->
+
           <view class='page_create_item flex page_create_item_border' bindtap='chooseLocation' >
              <view class='flex' style="width:100%">
                 <view class='mr10 w30 '>
@@ -76,7 +65,7 @@
            </view>  
            <view class='page_create_item flex page_create_item_border' >
                 <image src="../../../img/wechat.png" class='icon_address mr10' ></image>
-                <input name="input" class="create_params" placeholder="微信号码(必填)" bindinput="bindInput" data-value="wechat"  value="{{form.wechat}}" class='flex_grow' />
+                <input name="input" class="create_params" placeholder="微信号码" bindinput="bindInput" data-value="wechat"  value="{{form.wechat}}" class='flex_grow' />
            </view>
            <view class='page_create_item_remark'>请确保您的微信号可以被搜索到，在微信设置-隐私-添加我的方式中打开微信号搜索</view>
       </div>
