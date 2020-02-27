@@ -60,6 +60,13 @@
   line-height:88rpx;
   border-radius:44rpx;  
 }
+.button_success_blue{
+  color:#FFF;
+  background-color: #189AF8;
+  width:420rpx;
+  line-height:88rpx;
+  border-radius:44rpx;  
+}
 
 .button_share{
   background: #FFF;

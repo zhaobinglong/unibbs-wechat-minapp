@@ -60,7 +60,7 @@
   color:#FFF;
 }
 .page_success_back{
-   color: #04c500;
+   color: #189AF8;
    font-size:28rpx;
    margin-top:28rpx;
 }

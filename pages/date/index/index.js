@@ -43,35 +43,6 @@ Page({
     current_top_type: 'city',
     current_category: null //当前应该显示的二级菜单信息
   },
-  
-  // 学校主页分享标题：5月7日利物浦大学二手信息更新
-  // onShareAppMessage: function(res) {
-  //   let college = wx.getStorageSync('college')
-  //   let title = college+'：提问题、卖二手、租房子、找工作';
-  //   let path = '';
-  //   let imageUrl = ''
-  //   if (res.from === 'button') {
-  //     const obj = res.target.dataset.item
-  //     if (obj.title) {
-  //       title = college + '：' + obj.title
-  //     } else {
-  //       title = college + '：' + obj.cont
-  //     }
-  //     path = "pages/date/detail/index?id=" + obj.id +"from=card";
-  //     if (obj.imgs.length) {
-  //       imageUrl = obj.imgs[0]
-  //     }
-  //   } else {
-  //     path = "pages/date/index/index?college=" + college;
-  //   }
-    
-  //   return {
-  //     title: title,
-  //     path: path,
-  //     imageUrl: imageUrl
-  //   }    
-
-  // },
 
   // 监视滚动距离
   bindscroll:function (e) {
@@ -120,7 +91,7 @@ Page({
          if(wx.getStorageSync('college')){
             const college = wx.getStorageSync('college');
             this.getList(college);
-            this.getCollege(college);     
+            //this.getCollege(college);     
          }else{
            wx.redirectTo({
             url:'../city/index'
@@ -264,45 +235,28 @@ Page({
   // 每次onshow，判断用户是否授权，如果不美授权获取信息，则重新发起授权
   // 每次onshow，刷新消息数量
   onShow: function() {
-     
+     // let openid = wx.getStorageSync('openid');
 
-     let openid = wx.getStorageSync('openid');
+     // app.canvas = {
+     //  img:'',
+     //  qrcode:''
+     // }
 
-     app.canvas = {
-      img:'',
-      qrcode:''
-     }
-
-     if(app.need_update){
-         this.updateList();
-         this.getCollege(this.data.e.college);
-         app.need_update = false;
-     }
+     // if(app.need_update){
+     //     this.updateList();
+     //     this.getCollege(this.data.e.college);
+     //     app.need_update = false;
+     // }
 
      app.tempFilePaths=[];
      
-     this.setData({
-      unread:app.unread
-     })
     
     if (wx.getStorageSync('college')) {
       title = 'UNIBBS-' + wx.getStorageSync('college')
       wx.setNavigationBarTitle({
         title: title
       })      
-    }
-
-
-    // 如果用户从招聘广告处返回，成员和发布数量显示为0 
-    if(app.new_school){
-       var college = this.data.college;
-       college.count = '';
-       college.num = '';
-       this.setData({
-        college:college
-       })
-       app.new_school = false;
-    }
+    }    
 
   },
 

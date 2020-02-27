@@ -208,7 +208,7 @@ Page({
          
          // 没有头像，给一个默认头像
          if(!res.avatarUrl){
-            res.avatarUrl = '../../../img/logo.png'
+            res.avatarUrl = '../../../img/user.png'
          }
          
          self.setData({
