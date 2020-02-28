@@ -7,6 +7,8 @@ const config = require("../../../config/index.js");
 // const promise = require("../../../lib/es6-promise.js");
 const minAppPromise = require("../../../utils/minAppPromise.js");
 
+// import http  from '../../../lib/http.js'
+import api from '../../../api/index.js'
 
 //获取应用实例
 var app = getApp();
@@ -70,7 +72,7 @@ Page({
    * - 新用户点击别人分享的学校主页进入
    * - 用户通过扫描学校二维码进入
   **/
-  onLoad: function(e) {
+  async onLoad (e) {
      wx.showLoading();
      let self = this;
      
@@ -109,6 +111,16 @@ Page({
         })
      },false)
 
+     
+     // console.log(app.api.setLangs('chn'))
+     // indexModel.setLangs('chn').then(res => {
+     //  console.log(res)
+     // })
+     app.api.setLangs('chn').then(res => {
+      console.log(res)
+     })
+     // console.log(indexModel)
+     // console.log(http)
   },
   
 
@@ -252,7 +264,7 @@ Page({
      
     
     if (wx.getStorageSync('college')) {
-      title = 'UNIBBS-' + wx.getStorageSync('college')
+      let title = 'UNIBBS-' + wx.getStorageSync('college')
       wx.setNavigationBarTitle({
         title: title
       })      

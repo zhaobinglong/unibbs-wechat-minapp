@@ -3,8 +3,8 @@ const network = require("/utils/network.js");
 const userModel = require("/utils/userModel.js");
 const systemModel = require("/utils/userModel.js");
 const util = require("/utils/util.js");
-//app.js
-// app通用方法  可以在其它页面的js中调用
+
+import api from '/api/index.js'
 
 App({
   userInfo: {
@@ -19,6 +19,7 @@ App({
   location:{}, //首页当前筛选条件（国家+城市）可以被修改
   shareTitle: "在微信上可以管理日程了",
   shareUrl: "pages/date/index/index?from=normal",
+  api: api,
   form: {
       openid:'',
       title: "",
