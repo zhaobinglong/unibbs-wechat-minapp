@@ -10,7 +10,7 @@
 </view>
 <view wx:else>
     
-     <goods form = "{{form}}"></goods>
+      <goods form = "{{form}}"></goods>
       <div class='detail_box '>
           <view class='flex flex_between detail_cont_item'>
             <view>分享至：</view>
@@ -28,6 +28,7 @@
           <view class='detail_cont_item flex' bindtap='toReport'>
             举报
           </view>
+          <ad unit-id="adunit-65e364f1e3f455a5"></ad>
       </div>
       <view class=' date_edit_cont '>
         <view class='replay_message_item' wx:key  wx:for="{{comment}}" wx:for-item="item" wx:if="{{item.cont}}" bindtap="commentClick" data-index="{{index}}" data-item="{{ item }}">

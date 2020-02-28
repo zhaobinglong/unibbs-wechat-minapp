@@ -1,9 +1,5 @@
 
-
-  
-
- <scroll-view  scroll-y="true" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;background:#F5F5F5" bindscrolltolower="lower" wx:if="{{!is_first_loading}}" bindscroll="bindscroll">
-    <view class=''>
+    <view class='' style="background:#F5F5F5">
         <view class="f-mask z1" wx:if="{{show_subcate}}" bindtap="clickTypeMore"></view>
         <view class="re z10">
 
@@ -96,7 +92,6 @@
   <view class="list_over_mul">不能再扯了，没有数据了</view>
   <!-- <view class="list_over_mul link_text clean_button" bindtap="clickBanner">加入校园合伙人</view > -->
  </view>
- </scroll-view>
 
  <fixButton ></fixButton> 
 

@@ -4,11 +4,6 @@ const userModel = require("../../../utils/userModel.js");
 const systemModel = require("../../../utils/systemModel.js");
 const util = require("../../../utils/util.js");
 const config = require("../../../config/index.js");
-// const promise = require("../../../lib/es6-promise.js");
-const minAppPromise = require("../../../utils/minAppPromise.js");
-
-// import http  from '../../../lib/http.js'
-import api from '../../../api/index.js'
 
 //获取应用实例
 var app = getApp();
@@ -63,8 +58,11 @@ Page({
 
   // 下拉刷新
   onPullDownRefresh:function(e){
-      this.updateList();
+    wx.startPullDownRefresh()
+    this.updateList();
   },
+
+  onReachBottom: function() {},
 
   /**
    * 首页进入情况
@@ -72,7 +70,7 @@ Page({
    * - 新用户点击别人分享的学校主页进入
    * - 用户通过扫描学校二维码进入
   **/
-  async onLoad (e) {
+  onLoad (e) {
      wx.showLoading();
      let self = this;
      
@@ -112,15 +110,10 @@ Page({
      },false)
 
      
-     // console.log(app.api.setLangs('chn'))
-     // indexModel.setLangs('chn').then(res => {
-     //  console.log(res)
-     // })
      app.api.setLangs('chn').then(res => {
       console.log(res)
      })
-     // console.log(indexModel)
-     // console.log(http)
+
   },
   
 
@@ -212,7 +205,6 @@ Page({
      this.data.page = 0;
      this.data.list = [];
      this.setData({
-      list:[],
       no_page:false
      })
      this.getList(this.data.e.college);
@@ -403,20 +395,14 @@ Page({
            r.res[i].formatDate = new Date(time).toLocaleDateString()
          }
 
-       // for (var i = 0; i < res.length; i++) {
-       //   var time = parseInt(res[i].createtime)*1000;
-       //   res[i].createtime = new Date(time).toLocaleDateString()
-         
-       // }
-
          const list =  self.data.list.concat(r.res);
 
           self.setData({
             list:list,
             is_first_loading:false
           })
-         wx.hideLoading();
-         
+         // wx.hideLoading();
+         wx.stopPullDownRefresh()
          // 如果返回小于十条，表示后面没有了
          if(r.res.length<20){
             self.setData({
