@@ -60,9 +60,13 @@ Page({
   onPullDownRefresh:function(e){
     wx.startPullDownRefresh()
     this.updateList();
+    wx.stopPullDownRefresh()
   },
-
-  onReachBottom: function() {},
+  
+  //
+  onReachBottom: function() {
+    this.getList(this.data.e.college);
+  },
 
   /**
    * 首页进入情况
@@ -72,16 +76,55 @@ Page({
   **/
   onLoad (e) {
      wx.showLoading();
-     let self = this;
-     
-     // 用户通过扫码学校二维码进入,这里参数就是学校的id
-     if(e.scene){
+     this.data.e = e
+    
+     // 获取分类 
+     systemModel.getTypeList((res)=>{
+        wx.setStorageSync('classify',res)
+        console.log(res)
+        this.setData({
+          types: res
+        })
+     },false)
+
+     // 如果首页是重新加载，则将缓存移除
+     wx.removeStorageSync('indexList')
+     // app.api.setLangs('chn').then(res => {
+     //  console.log(res)
+     // })
+
+  },
+
+  // 每次切出页面，刷新数据，因为其他页面可能有删除和添加操作
+  // 回到首页， 要把刚刚下载的图片清除
+  // 每次onshow，判断用户是否授权，如果不美授权获取信息，则重新发起授权
+  // 每次onshow，刷新消息数量
+  onShow: function() {
+    let self = this;
+    if (wx.getStorageSync('college')) {
+      let title = 'UNIBBS-' + wx.getStorageSync('college')
+      wx.setNavigationBarTitle({
+        title: title
+      })      
+    } 
+
+    // 如果列表有缓存，直接使用缓存
+    let indexList = wx.getStorageSync('indexList')
+    if (indexList) {
+      this.setData({
+        list: indexList
+      })
+      return false
+    }
+
+     // 重新加载首页列表数据
+     console.log(this.data.e)
+     if(this.data.e.scene){
        this.getCollgeById(e.scene)
      // 用户通过小程序首页或者学校主页进入
      }else{
-       if(e.college){
-         this.data.e = e; 
-         const college = e.college;
+       if(this.data.e.college){
+         const college = this.data.e.college;
          this.getList(college);         
          if(!wx.getStorageSync('college')){
            wx.setStorageSync('college',college)
@@ -99,21 +142,14 @@ Page({
          }
        }
      }
-    
-     // 获取分类 
-     systemModel.getTypeList((res)=>{
-        wx.setStorageSync('classify',res)
-        console.log(res)
-        this.setData({
-          types: res
-        })
-     },false)
-
-     
-     app.api.setLangs('chn').then(res => {
-      console.log(res)
-     })
-
+    // let indexList = wx.getStorageSync('indexList')  
+    // console.log('=======')
+    // console.log(indexList) 
+    // if (indexList) {
+    //   this.setData({
+    //     list: indexList,
+    //   })
+    // }
   },
   
 
@@ -233,51 +269,6 @@ Page({
      }
    },
 
-  // 每次切出页面，刷新数据，因为其他页面可能有删除和添加操作
-  // 清空canvas总保存的临时图片路径
-  // 回到首页， 要把刚刚下载的图片清除
-  // 每次onshow，判断用户是否授权，如果不美授权获取信息，则重新发起授权
-  // 每次onshow，刷新消息数量
-  onShow: function() {
-     // let openid = wx.getStorageSync('openid');
-
-     // app.canvas = {
-     //  img:'',
-     //  qrcode:''
-     // }
-
-     // if(app.need_update){
-     //     this.updateList();
-     //     this.getCollege(this.data.e.college);
-     //     app.need_update = false;
-     // }
-
-     app.tempFilePaths=[];
-     
-    
-    if (wx.getStorageSync('college')) {
-      let title = 'UNIBBS-' + wx.getStorageSync('college')
-      wx.setNavigationBarTitle({
-        title: title
-      })      
-    }    
-
-  },
-
-  // 选择城市
-  selectCity(){
-      wx.navigateTo({
-        url: '../city/index'
-      })    
-  },
-
-  // 点击logo，前往学校切换页面
-  clickLogo(){
-      wx.navigateTo({
-        url: '../city/index?from=college'
-      })    
-  },
-
   // 点击子分类
   clickType(e){
      const type = e.currentTarget.dataset.type;
@@ -347,20 +338,6 @@ Page({
     })
   },
 
-  
-
-  // 滚动到最底部
-  lower(){
-    if(this.data.is_loading){
-       return false;
-    }else{
-       
-       this.getList(this.data.e.college);
-    }
-    
-  },
-
-
   // 获取二手列表
   // 如果当前学校还没有发布，跳转加入我们页面
   // 将第二页的数据，开始乱序排列：目的是因为一个人会发布多个，让数据看起来更接近理想情况
@@ -384,6 +361,8 @@ Page({
         page: page,
         openid: ''
       },function(r){
+         // wx.hideLoading();
+
          self.data.is_loading = false;
 
          for (var i = 0; i < r.res.length; i++) {
@@ -401,8 +380,9 @@ Page({
             list:list,
             is_first_loading:false
           })
-         // wx.hideLoading();
-         wx.stopPullDownRefresh()
+          
+          // 缓存首页列表数据
+          wx.setStorageSync('indexList', list)
          // 如果返回小于十条，表示后面没有了
          if(r.res.length<20){
             self.setData({
@@ -415,6 +395,7 @@ Page({
          console.log(r.res)
          wx.stopPullDownRefresh();
          self.data.page++;
+         wx.hideLoading()
       },false)       
 
 

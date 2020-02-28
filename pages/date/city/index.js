@@ -236,6 +236,7 @@ Page({
 
      userModel.chooseCollege(obj,function(res){
        wx.removeStorageSync('collegeInfo')
+       wx.removeStorageSync('indexList')
        wx.setStorageSync('college', college)
        wx.reLaunch({
         url: '../index/index?college=' + college

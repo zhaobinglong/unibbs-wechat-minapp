@@ -481,23 +481,6 @@ Page({
         return false;
     } 
 
-    if(!this.data.form.wechat){
-        wx.hideLoading();
-        wx.showModal({
-          title: '提示',
-          content: '必须输入微信号码',
-          showCancel:false,
-          success: function(res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
-          }
-        })
-        return false;
-    } 
-
     if (this.data.form.address === this.data.default_address) {
       this.data.form.address = ''
     }   

@@ -43,8 +43,13 @@ Page({
         self.setData({
           form:res.res
         })
+        let list = wx.getStorageSync('indexList')
+        if (list) {
+          list.unshift(res.res)
+        }
+        wx.setStorageSync('indexList', list)
       },false)
-      app.need_update = true;
+
   },
 
   onShow: function() {

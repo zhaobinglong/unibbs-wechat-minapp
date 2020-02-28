@@ -478,6 +478,11 @@ Page({
             app.need_update = true
             self.data.form.status = status
             ershouModel.push(self.data.form,function(res){
+              let indexList = wx.getStorageSync('indexList')
+              let arr = indexList.filter(item => {
+                 return item.id!=self.data.form.id
+              });
+              wx.setStorageSync('indexList', arr)
               wx.navigateBack({})
             })
           } else if (res.cancel) {
