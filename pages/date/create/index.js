@@ -428,26 +428,28 @@ Page({
   },
   
   // 点击发布按钮，先尝试授权获取用户信息
-  getUserInfo(e){
-    if(!e.detail.userInfo){
-      wx.showModal({
-        title: '提示',
-        content: '允许授权更有助于成交哦，点击发布按钮再次授权',
-        showCancel: false,
-        success: function(res) {
-        }
-      })
-      return false;
-    }
-    let data = e.detail.userInfo
-    let userInfo = wx.getStorageSync('userInfo')
-    let obj = Object.assign(userInfo, data)
-    userModel.updateUser(obj,function(res){
-       console.log(res)
-    },false)
+  // 调用订阅消息，无法和获取用户信息一起
+  async getUserInfo(e){
+    let ids = ['dgp1OjAIjfz2mr9PbLJ5U2vU4edvkLO0uXpjJhSfAy4'];
+    let  appleSubscribeMessage = await app.api.requestSubscribeMessage(ids);
+    console.log(appleSubscribeMessage);
+    // console.log(e)
+    // if (e.detail.errMsg == "getUserInfo:ok") {
+    //   let data = e.detail.userInfo
+    //   let userInfo = wx.getStorageSync('userInfo')
+    //   if (userInfo.nickName == '' || userInfo.avatarUrl == '') {
+    //     let obj = Object.assign(userInfo, data)
+    //     userModel.updateUser(obj,function(res){
+    //        console.log(res)
+    //     },false) 
+    //   }
+
+    // } 
 
     this.create();
   },
+
+
 
   /**
    * 发布二手

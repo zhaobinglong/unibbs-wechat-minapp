@@ -5,6 +5,7 @@
     "bar": "../../../components/bar/index",
     "waterfall": "../../../components/waterfall/index",
     "feed": "../../../components/feed/index",
-    "fixButton": "../../../components/fixButton/index"
+    "fixButton": "../../../components/fixButton/index",
+    "loading": "../../../components/loading/index"
   }
 }

@@ -64,14 +64,19 @@
           </view>  
         </view> -->        
         <view >
+        <block wx:if="{{ loading }}">
+          <loading></loading>
+        </block>
+        <block wx:else>
+          <block wx:if="{{ is_goods }}">
+            <waterfall list="{{list}}" load_over="{{load_over}}"></waterfall>
+          </block>
+          
+          <block wx:else> 
+            <feed list="{{list}}" load_over="{{load_over}}" bindclickevent="onClickEvent" bindlikedevent="onUserLike"></feed>
+          </block>          
+        </block>
 
-        <block wx:if="{{ is_goods }}">
-          <waterfall list="{{list}}" load_over="{{load_over}}"></waterfall>
-        </block>
-        
-        <block wx:else> 
-          <feed list="{{list}}" load_over="{{load_over}}" bindclickevent="onClickEvent" bindlikedevent="onUserLike"></feed>
-        </block>
         
         </view>
     </view>
@@ -94,6 +99,7 @@
  </view>
 
  <fixButton ></fixButton> 
+
 
 <!-- <bar college="{{college.uName}}" page="home" unread="{{unread}}" is_x="{{is_x}}"></bar> -->
 

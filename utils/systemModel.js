@@ -24,11 +24,18 @@ function getTypeList(callback,fail){
 }
 
 
-// 更新用户信息
 function  sendWXNotice(data,callback,fail){
     var url = '/push.php?action=pushAfterMessgae';
     if(!data.name){
       data.name = '匿名用户'
+    }
+    network.post(url,data,callback,fail)
+}
+
+function  sendCommentNotice(data,callback,fail){
+    var url = '/push.php?action=pushAfterComment';
+    if(!data.name){
+      data.name = 'unibbs用户'
     }
     network.post(url,data,callback,fail)
 }
@@ -112,6 +119,7 @@ module.exports = {
   getCollege:getCollege,
   errorUpload:errorUpload,
   getCollegeById:getCollegeById,
-  getUni: getUni
+  getUni: getUni,
+  sendCommentNotice
 }
 

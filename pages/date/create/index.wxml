@@ -15,18 +15,16 @@
         <view class='page_create_item ' style='padding-bottom:-30rpx'>
           <textarea  maxlength="-1"  placeholder="内容的第一句将成为分享标题" data-value="cont" bindinput="bindInput" value="{{form.cont}}"  class='page_create_textarea ' placeholder-class="ph-color-tip" />
         </view>
-        <form report-submit="true" bindsubmit="formSubmit" >
-          <view class="btn-create border-ra5 center " >
-               <!-- <form report-submit="true" bindsubmit="formSubmit" class='flex'> -->
-                 <!--  <view class="button_box" > -->
-                      <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"  class='bg-btn f14 color-w ' formType="submit" style="line-height: 60rpx;">发布</button>   
-                  <!-- </view>  -->
-                  <!-- <view class="button_box" wx:if="{{form.is_my && form.is_edit}}"> -->
-                      <!-- <button bindtap="sellDown"   class='button button_del' formType="submit">我不卖了</button>  -->
-                  <!-- </view>    -->
-              <!-- </form>    -->
-          </view>   
-        </form>  
+        <view class="btn-create border-ra5 center " >
+             <!-- <form report-submit="true" bindsubmit="formSubmit" class='flex'> -->
+               <!--  <view class="button_box" > -->
+                    <button  bindtap="getUserInfo"  class='bg-btn f14 color-w ' style="line-height: 60rpx;">发布</button>   
+                <!-- </view>  -->
+                <!-- <view class="button_box" wx:if="{{form.is_my && form.is_edit}}"> -->
+                    <!-- <button bindtap="sellDown"   class='button button_del' formType="submit">我不卖了</button>  -->
+                <!-- </view>    -->
+            <!-- </form>    -->
+        </view>   
       </div>
 
 

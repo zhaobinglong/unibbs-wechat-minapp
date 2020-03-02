@@ -75,7 +75,6 @@ Page({
    * - 用户通过扫描学校二维码进入
   **/
   onLoad (e) {
-     wx.showLoading();
      this.data.e = e
     
      // 获取分类 
@@ -112,7 +111,8 @@ Page({
     let indexList = wx.getStorageSync('indexList')
     if (indexList) {
       this.setData({
-        list: indexList
+        list: indexList,
+        loading: false
       })
       return false
     }
@@ -142,6 +142,9 @@ Page({
          }
        }
      }
+      this.setData({
+        loading: false
+      })
     // let indexList = wx.getStorageSync('indexList')  
     // console.log('=======')
     // console.log(indexList) 
@@ -241,7 +244,8 @@ Page({
      this.data.page = 0;
      this.data.list = [];
      this.setData({
-      no_page:false
+      no_page:false,
+      loading: true
      })
      this.getList(this.data.e.college);
   },
@@ -378,7 +382,8 @@ Page({
 
           self.setData({
             list:list,
-            is_first_loading:false
+            is_first_loading:false,
+            loading: false
           })
           
           // 缓存首页列表数据
@@ -395,10 +400,9 @@ Page({
          console.log(r.res)
          wx.stopPullDownRefresh();
          self.data.page++;
-         wx.hideLoading()
       },false)       
 
-
+      
   },
 
   // 获取位置描述

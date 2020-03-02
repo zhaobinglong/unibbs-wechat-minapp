@@ -1,0 +1,4 @@
+
+<view  class='loading'>
+    <image src="../../img/loading.png" ></image>
+</view>

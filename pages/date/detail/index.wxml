@@ -28,7 +28,10 @@
           <view class='detail_cont_item flex' bindtap='toReport'>
             举报
           </view>
-          <ad unit-id="adunit-65e364f1e3f455a5"></ad>
+          <view wx:if="{{ comment.length == 0 }}">
+            <ad unit-id="adunit-65e364f1e3f455a5"></ad>
+          </view>
+          
       </div>
       <view class=' date_edit_cont '>
         <view class='replay_message_item' wx:key  wx:for="{{comment}}" wx:for-item="item" wx:if="{{item.cont}}" bindtap="commentClick" data-index="{{index}}" data-item="{{ item }}">
@@ -44,7 +47,7 @@
            </view>       
         </view>
       </view>
-      <view style='height:100rpx'></view>
+      <view style='height:200rpx'></view>
 
 
       

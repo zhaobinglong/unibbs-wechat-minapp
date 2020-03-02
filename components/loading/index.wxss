@@ -1,0 +1,30 @@
+@import "../../common/wxss/common.wxss";
+@import "../../common/wxss/button.wxss";
+@import "../../common/wxss/icon.wxss";
+@import "../../common/wxss/userinfo.wxss";
+
+.loading{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.loading image{
+  width: 120rpx;
+  height: 120rpx;   
+  display: inline-block;
+  -webkit-animation:Rotate 0.8s infinite linear;
+  margin-top: 50%;
+}
+
+@-webkit-keyframes Rotate /* Safari 和 Chrome */
+{
+   from {transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+   to {transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+}

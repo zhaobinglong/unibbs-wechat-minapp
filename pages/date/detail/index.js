@@ -346,7 +346,7 @@ Page({
     
     let self = this;
     let fromopenid = wx.getStorageSync('openid')
-
+    let userInfo = wx.getStorageSync('userInfo')
     
     
      var data = {}
@@ -362,7 +362,9 @@ Page({
         name:app.userInfo.nickName,
         toopenid:replay.fromopenid,
         fromopenid:fromopenid,
-        id: this.data.id
+        id: this.data.id,
+        title: this.data.form.title || this.data.form.cont,
+        type: '回复'
        }
      
      // 这是正常留言
@@ -371,10 +373,11 @@ Page({
        data = {
         tag:'',
         cont:this.data.form.message,
-        name:app.userInfo.nickName,
+        name:userInfo.nickName || app.userInfo.nickName,
         toopenid:this.data.form.openid,
         fromopenid:fromopenid,
-        id:this.data.id
+        id:this.data.id,
+        type: '留言'
        }
 
      }
@@ -386,7 +389,6 @@ Page({
 
      // 消息发送成功，在详情页面自动添加一个消息
      userModel.pushMessage(data,function(res){
-       wx.showToast('发送成功');
        let comment = self.data.comment;
        let userInfo = wx.getStorageSync('userInfo')
        comment.push({
@@ -402,23 +404,49 @@ Page({
         form,
         show_action: true
        })
-       self.sendWXNotice(data);
-        wx.showToast({
-          title: '发送成功',
-          icon: 'success',
-          duration: 2000
-        }) 
+       //self.sendWXNotice(data);
+        // wx.showToast({
+        //   title: '发送成功',
+        //   icon: 'success',
+        //   duration: 2000
+        // })
+        wx.hideLoading() 
+        self.applyReplayMeaasgs(data)
      },false)
+  },
+
+  applyReplayMeaasgs(data) {
+    let content = 
+    wx.showModal({
+      title: '提示',
+      content:  data.type + '成功',
+      showCancel: false,
+      success: async (res) => {
+        let id = 'w7HeJjn-_4G1i0wAkdw8M77f6vvZTpJYtlezi4CdO7s'
+        wx.requestSubscribeMessage({
+          tmplIds: [id],
+          success: (res) => { 
+            console.log(res)
+            data.template_id = id
+            this.sendWXNotice(data)
+          }
+        })
+      }
+    })
   },
 
   // 发送微信通知给宝贝的主人
   // 如果宝贝的主人就是自己，自己给自己留言，就不要通知自己了
-
   sendWXNotice(obj){
-
-     systemModel.sendWXNotice(obj,function(res){
-       console.log(res)
-     },false)
+    if (obj.type == 'default') {
+      systemModel.sendWXNotice(obj,function(res){
+        console.log(res)
+      },false)      
+    } else {
+      systemModel.sendCommentNotice(obj, res => {
+        console.log(res)
+      },false)
+    }
   },
 
   // 更新评论数量
