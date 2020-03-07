@@ -254,6 +254,13 @@
 					"pathName": "pages/date/success/index",
 					"query": "from=create&id=1736",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/date/share/index",
+					"pathName": "pages/date/share/index",
+					"query": "id=1833",
+					"scene": null
 				}
 			]
 		}

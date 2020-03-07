@@ -1,11 +1,7 @@
 
 <view class='share_img_box ' >
   
-  <image src="{{form.current_img}}"  bindload="loadimg" style='display:none;width:320px;height:300px'></image>
-  <!-- 第一个canvas，绘制头图 -->
-  <!-- <canvas canvas-id="top_img"  class='share_img' style="width:320px;height:300px;"/> -->
-  <!-- 第二个canvas 绘制整图 -->
-  <canvas canvas-id="share_img"  class='share_img' style="width:330px;height:524px" bindlongpress="downQrcode"/>
+  <image src="{{img}}"  class="share_img" mode="aspectFit"></image>
 
   <view class='share_button flex flex_between'>
 

@@ -16,9 +16,9 @@
             <view>分享至：</view>
             <view class='flex'>
                 
-<!--                 <navigator class='flex fs28 mr60'  open-type="navigate"  url="../share/index?from=detail&id={{form.id}}" hover-class="none">
+                <navigator class='flex fs28 mr60'  open-type="navigate"  url="../share/index?from=detail&id={{form.id}}" hover-class="none">
                     <image src="../../../img/card.png" class='icon_share '></image>生成卡片
-                </navigator> -->
+                </navigator>
                 <button open-type="share" plain='true' class='button_reset fs28 flex '><image src="../../../img/wechat_detail.png" class='icon_share'></image>微信群</button>
             </view>
           </view>

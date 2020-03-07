@@ -8,49 +8,63 @@ const config = require("../../../config/index");
 var app = getApp();
 Page({
   data: {
-    list:[],
-    imgbase:app.imgbase,
-    canvas:{
-      img:'',
-      qrcode:''
-    },
-    size:{}, // 头图的尺寸
-    form:{}
+    img:''
   },
 
 
   onShareAppMessage: function() {
-    var title = this.data.form.college+':' +this.data.form.price+'￡,'+this.data.form.cont;
+    // var title = this.data.form.college+':' +this.data.form.price+'￡,'+this.data.form.cont;
 
-    var path = "pages/date/detail/index?&id=" + this.data.form.id;
-    var imageUrl =this.data.form.imgs[0];
-    return {
-      title: title,
-      path: path,
-      imageUrl:imageUrl
-    };
+    // var path = "pages/date/detail/index?&id=" + this.data.form.id;
+    // var imageUrl =this.data.form.imgs[0];
+    // return {
+    //   title: title,
+    //   path: path,
+    //   imageUrl:imageUrl
+    // };
   },
 
   /**
   * from = share ，前往详情页面
   **/
   onLoad: function(e) {
-    var self = this;
-    ershouModel.getDetail(e.id,function(res){
-       console.log(res)
-       res.current_img=res.imgs[0];
+    wx.showLoading()
+    let url = 'https://examlab.cn/uniapi/weixin.php?ctrl=weixin&action=getShareImg&id=' + e.id
+    wx.request({
+      // 基础路径 加上 接口的路径
+      url: url,
+      header: {
+        // 这里用这种 是post请求时候，后台容易出问题 这种写法可以正常使用
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
+      // 请求方式
+      method: 'GET',
+      // 成功回调
+      success: res => {
+        console.log('=============')
+        console.log(res.data)
+        wx.hideLoading()
+        this.setData({
+          img: res.data.trim()
+        })
+      }
+    })
+    // var self = this;
+    // ershouModel.getDetail(e.id,function(res){
+    //    console.log(res)
+    //    res.current_img=res.imgs[0];
 
-       if(res.cont.length>26){
-         res.cont = res.cont.slice(0,26)+'...'
-       }
+    //    if(res.cont.length>26){
+    //      res.cont = res.cont.slice(0,26)+'...'
+    //    }
 
 
-       self.setData({
-           form:res
-       })
+    //    self.setData({
+    //        form:res
+    //    })
          
-        self.drawImg();     
-    },false)
+    //     self.drawImg();     
+    // },false)
 
 
     // 下载本页面的小程序二维码
@@ -72,22 +86,14 @@ Page({
 
     
 
-    if(e.from == 'detail'){
-         wx.setNavigationBarTitle({
-           title: '分享'
-        })       
-    }
+    // if(e.from == 'detail'){
+    //      wx.setNavigationBarTitle({
+    //        title: '分享'
+    //     })       
+    // }
 
     
   },
-
-
-  // 下拉刷新
-  onPullDownRefresh:function(e){
-     wx.stopPullDownRefresh();
-  },
-
-
 
   // 如果没有这个函数，请求无法发送出去
   onReady: function() {},
@@ -193,58 +199,44 @@ Page({
   downQrcode(){
     wx.showLoading({title:'下载中'});
     var self = this;
-    wx.canvasToTempFilePath({
-      x:0,
-      y:0,
-      canvasId: 'share_img',
+    wx.downloadFile({
+      url: this.data.img, 
       success: function(res) {
-          console.log(res.tempFilePath)
-          // wx.downloadFile({
-          //   url: res.tempFilePath, 
-          //   success: function(res) {
-                wx.saveImageToPhotosAlbum({
-                    filePath:res.tempFilePath,
-                    success(res) {
-                        console.log(res)
+          wx.saveImageToPhotosAlbum({
+              filePath:res.tempFilePath,
+              success(res) {
+                  console.log(res)
+                  wx.hideLoading();
+                  wx.showModal({
+                    title: "提示",
+                    content: "该图片已经保存到您的手机相册,可以直接去朋友圈分享啦～",
+                    showCancel:false,
+                    success: function(res) {
+                      if (res.confirm) {
+                        console.log("download ok");
                         wx.hideLoading();
-                        wx.showModal({
-                          title: "提示",
-                          content: "该图片已经保存到您的手机相册,可以直接去朋友圈分享啦～",
-                          showCancel:false,
-                          success: function(res) {
-                            if (res.confirm) {
-                              console.log("download ok");
-                              wx.hideLoading();
-                              self.setData({
-                                 show_qrcode:false
-                              })
-                            }
-                          }
-                        });
-                    },
-                    fail(){
-                       wx.hideLoading();
+                        self.setData({
+                           show_qrcode:false
+                        })
+                      }
                     }
-                })
-
-          //   },
-          //   fail(res) {
-          //     wx.hideLoading();
-          //     wx.showToast({
-          //       title: res.errMsg,
-          //       image: "../../../common/img/icon/error.png",
-          //       duration: 1000
-          //     });
-          //   }
-          // });
-      } 
+                  });
+              },
+              fail(){
+                 wx.hideLoading();
+              }
+          })
+      },
+      fail: res => {
+        console.log(res)
+      }
     })
   },
 
   // 头图下载ok
   loadimg:function(e){
     console.log(e)
-    this.data.size=e.detail;
+
   }
  
 
