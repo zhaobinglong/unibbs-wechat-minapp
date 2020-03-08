@@ -18,9 +18,9 @@
       <!-- <view class='fs24 page_success_bottom '>分享给好友,有助于更快卖出去哦！</view> -->
       <!-- </navigator> -->
 	  <view class=" mt100" >
-        <button class='button_success_blue flex flex_center' open-type='share'  >
-           <image src="../../../img/share-wechat.png" class='icon_share_wechat'></image>
-           分享至微信群
+        <button class='button_success_blue flex flex_center' bindtap="shareTimeLine" >
+    <!--        <image src="../../../img/share-wechat.png" class='icon_share_wechat'></image> -->
+            我要分享
         </button>  
 	     
 	  </view> 

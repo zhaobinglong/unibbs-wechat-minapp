@@ -13,21 +13,6 @@ Page({
      id:'',
      form:{}
   },
-  // 在详情页面的分享，要带上来源信息
-  onShareAppMessage: function() {
-    let title = this.data.form.college+'：'+ this.data.form.cont;
-    let path = "pages/date/detail/index?&id=" + this.data.form.id;
-    if (this.data.form.imgs.length) {
-      imageUrl = this.data.form.imgs[0];
-    } else {
-      imageUrl = '/img/v2/default.jpg'
-    }
-    return {
-      title: title,
-      path: path,
-      imageUrl:imageUrl
-    };
-  },
 
   /**
   * 详情页面逻辑

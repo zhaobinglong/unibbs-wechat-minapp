@@ -19,7 +19,8 @@
     "pages/set/textArea/index",
     "pages/set/form/index",
     "pages/test/index",
-    "pages/out/index"
+    "pages/out/index",
+    "pages/feedback/index"
   ],
   "tabBar": {
     "color": "#AAAAAA",

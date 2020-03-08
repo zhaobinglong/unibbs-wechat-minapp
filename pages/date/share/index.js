@@ -8,20 +8,21 @@ const config = require("../../../config/index");
 var app = getApp();
 Page({
   data: {
-    img:''
+    img:'',
+    form: {}
   },
 
 
   onShareAppMessage: function() {
-    // var title = this.data.form.college+':' +this.data.form.price+'￡,'+this.data.form.cont;
+    var title = this.data.form.college+': ' + this.data.form.cont;
 
-    // var path = "pages/date/detail/index?&id=" + this.data.form.id;
-    // var imageUrl =this.data.form.imgs[0];
-    // return {
-    //   title: title,
-    //   path: path,
-    //   imageUrl:imageUrl
-    // };
+    var path = "pages/date/detail/index?&id=" + this.data.form.id;
+    var imageUrl =this.data.form.imgs[0] || this.data.img
+    return {
+      title: title,
+      path: path,
+      imageUrl:imageUrl
+    };
   },
 
   /**
@@ -49,22 +50,14 @@ Page({
         })
       }
     })
-    // var self = this;
-    // ershouModel.getDetail(e.id,function(res){
-    //    console.log(res)
-    //    res.current_img=res.imgs[0];
-
-    //    if(res.cont.length>26){
-    //      res.cont = res.cont.slice(0,26)+'...'
-    //    }
-
-
-    //    self.setData({
-    //        form:res
-    //    })
-         
-    //     self.drawImg();     
-    // },false)
+    var self = this;
+    ershouModel.getDetail(e.id,function(res){
+       console.log(res)
+       self.setData({
+        form: res.data
+       })
+    
+    },false)
 
 
     // 下载本页面的小程序二维码

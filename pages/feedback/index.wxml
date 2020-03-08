@@ -1,0 +1,9 @@
+
+<view >
+      <view class='join' >
+           <image src='../../img/developer.jpeg' mode='widthFix' class='join_img'></image>
+           <view class='button_box'>
+              <view class='button button_join' bindtap='clickAddWechat'>添加管理员微信</view>
+           </view>
+      </view>
+</view>

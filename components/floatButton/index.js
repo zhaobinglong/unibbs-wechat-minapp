@@ -14,7 +14,7 @@ Component({
   },
   data: {
     'navigatePath':{
-      'default': '/pages/date/classify/index'
+      'default': '/pages/feedback/index'
     }
   },
   attached: function(){
