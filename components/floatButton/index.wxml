@@ -1,0 +1,4 @@
+
+<view  class='fixed' bindtap="onClick">
+    <i class="iconfont icon-yijianfankui fixed_icon"></i>
+</view>

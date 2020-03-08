@@ -8,11 +8,11 @@ App({
 <view>{{text}}</view>
 
 ## 定时返回上一层
-        setTimeout(function(){
-            wx.navigateBack({
-              delta: 1
-           })
-        },2000)
+setTimeout(function(){
+    wx.navigateBack({
+      delta: 1
+   })
+},2000)
 
 
 
@@ -199,16 +199,18 @@ login:function (callback) {
 
 小程序可以在每个页面添加单独的分享，分享应用内的页面链接，分享图片是当前屏幕截取的图片，开发者无法自定义，建议将分享title和path在app中定义，然后全局引用，维护方便
 
-  onShareAppMessage: function () {
-      return {
-        title: app.shareTitle,
-        path: app.shareUrl,
-      }
-  },
+onShareAppMessage: function () {
+    return {
+      title: app.shareTitle,
+      path: app.shareUrl,
+    }
+},
 
 
-## 问题：
+## 20200308
+- 搜索时注意过滤被删除的帖子，要倒序
+- 对上传的内容接入微信内容审核接口
+- 发布成功后，增加分享按钮
+- 引入iconfont字体
+- 首页增加学校广播
 
--  小程序没有分享到朋友圈的接口，不能分享朋友圈
--  日历组件的开始和结束时间
--  

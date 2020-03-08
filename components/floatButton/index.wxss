@@ -1,0 +1,20 @@
+
+@import "../../common/wxss/font.wxss";
+
+.fixed{
+   position: fixed;
+   width: 120rpx;
+   height: 120rpx;
+   bottom: 30rpx;
+   right: 30rpx;
+   background-color: #189AF8;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.fixed_icon{
+   color: #FFF;
+   font-size: 50rpx;
+   font-weight: bold;
+}

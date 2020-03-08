@@ -1,7 +1,7 @@
 
 <view class="feed">
 
-    <view wx:for="{{list}}" wx:key class='feed_item' wx:key="{{item.id}}"  >
+    <view wx:for="{{list}}"  class='feed_item' wx:key="id" >
          <view bindtap="onClick" data-item="{{ item }}">
              <view class='feed_item_top' >
                 <image mode="aspectFit" src="/img/v2/sellDown.png"  class='feed_item_sell_down' wx:if="{{ item.status == '2' }}"></image>
@@ -11,7 +11,7 @@
                 </text>
              </view>
              <view class="feed_imgs" wx:if="{{item.imgs.length}}">
-               <view class="feed_img" wx:for="{{ item.imgs }}" wx:key>
+               <view class="feed_img" wx:for="{{ item.imgs }}" wx:key="id">
                  <image mode ="aspectFill" src="{{item}}" class='feed_img_photo' ></image>
                </view> 
              </view>

@@ -4,7 +4,8 @@
   "usingComponents": {
     "bar": "../../../components/bar/index",
     "waterfall": "../../../components/waterfall/index",
-    "feed": "../../../components/feed/index"
+    "feed": "../../../components/feed/index",
+    "floatButton": "../../../components/floatButton/index"
   },
   "navigationStyle": "custom"
 }

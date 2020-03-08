@@ -67,5 +67,5 @@
      </button>
    </view> -->
   
-   <!-- <bar college="{{college}}" page="user" is_x="{{is_x}}"></bar> -->
+   <floatButton ></floatButton>
 

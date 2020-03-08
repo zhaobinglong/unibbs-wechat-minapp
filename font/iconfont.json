@@ -1,0 +1,72 @@
+{
+  "id": "1622370",
+  "name": "unibbs",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1170241",
+      "name": "意见反馈",
+      "font_class": "yijianfankui",
+      "unicode": "e7de",
+      "unicode_decimal": 59358
+    },
+    {
+      "icon_id": "1108013",
+      "name": "通知",
+      "font_class": "svg45-copy",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "7197321",
+      "name": "icn_loading",
+      "font_class": "loading",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "688137",
+      "name": "用户 访客数",
+      "font_class": "yonghufangkeshu",
+      "unicode": "e7ad",
+      "unicode_decimal": 59309
+    },
+    {
+      "icon_id": "2849274",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "9385804",
+      "name": "知乎",
+      "font_class": "zhihu2",
+      "unicode": "e773",
+      "unicode_decimal": 59251
+    },
+    {
+      "icon_id": "9698496",
+      "name": "抖音",
+      "font_class": "douyin",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "10786107",
+      "name": "快手",
+      "font_class": "kuaishou",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "11697600",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e812",
+      "unicode_decimal": 59410
+    }
+  ]
+}
